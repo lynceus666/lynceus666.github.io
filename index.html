@@ -1,4 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frage-Seite</title>
+</head>
+<body>
+
+<!-- Ihr Formular -->
 <form id="quizForm">
     <input type="text" id="answer" placeholder="Ihre Antwort hier eingeben">
     <button type="button" onclick="checkAnswer()">Antwort absenden</button>
 </form>
+
+<!-- Ihr JavaScript -->
+<script>
+    function checkAnswer() {
+        var userAnswer = document.getElementById("answer").value;
+        var correctAnswer = "RichtigeAntwort"; // Setzen Sie hier Ihre korrekte Antwort ein
+
+        if(userAnswer === correctAnswer) {
+            window.location.href = "page2.html"; // Setzen Sie hier den Link zu Ihrer nächsten Seite ein
+        } else {
+            alert("Falsche Antwort! Bitte versuchen Sie es erneut.");
+        }
+    }
+</script>
+
+</body>
+</html>
