@@ -4,23 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frage-Seite</title>
+    <style>
+        /* Allgemeine Stile */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-image: url('start.jpg'); /* URL zu Ihrem Hintergrundbild */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* Menü-Stil */
+        .menu {
+            width: 200px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 20px;
+        }
+
+        /* Hauptinhalt Stil */
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        .question-image {
+            max-width: 300px;
+        }
+    </style>
 </head>
 <body>
 
-<!-- Ihr Formular -->
-<form id="quizForm">
-    <input type="text" id="answer" placeholder="Ihre Antwort hier eingeben">
-    <button type="button" onclick="checkAnswer()">Antwort absenden</button>
-</form>
+<div class="menu">
+    <!-- Ihr Menü -->
+    <ul>
+        <li>Menüpunkt 1</li>
+        <li>Menüpunkt 2</li>
+        <!-- Weitere Menüpunkte hinzufügen, falls benötigt -->
+    </ul>
+</div>
 
-<!-- Ihr JavaScript -->
+<div class="content">
+    <!-- Bild für die Frage -->
+    <img src="q1.jpg" alt="Bild zur Frage" class="question-image">
+    
+    <!-- Ihr Formular -->
+    <form id="quizForm">
+        <input type="text" id="answer" placeholder="Ihre Antwort hier eingeben">
+        <button type="button" onclick="checkAnswer()">Antwort absenden</button>
+    </form>
+</div>
+
 <script>
     function checkAnswer() {
         var userAnswer = document.getElementById("answer").value;
         var correctAnswer = "RichtigeAntwort"; // Setzen Sie hier Ihre korrekte Antwort ein
 
         if(userAnswer === correctAnswer) {
-            window.location.href = "page2.html"; // Setzen Sie hier den Link zu Ihrer nächsten Seite ein
+            window.location.href = "naechsteSeite.html"; // Setzen Sie hier den Link zu Ihrer nächsten Seite ein
         } else {
             alert("Falsche Antwort! Bitte versuchen Sie es erneut.");
         }
