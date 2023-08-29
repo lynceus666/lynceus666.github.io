@@ -24,12 +24,6 @@ html {
 	padding: 20px;
 }
 
-/* Hauptinhalt Stil */
-.content {
-	margin-left: 220px;
-	padding: 20px;
-}
-
 .question-image {
 	max-width: 300px;
 }
@@ -42,6 +36,8 @@ html {
 
 .content-wrap {
     flex: 1; /* Ermöglicht, dass dieser Bereich den verfügbaren Raum einnimmt */
+	margin-left: 220px;
+	padding: 20px;
 }
 
 
