@@ -8,6 +8,10 @@ body {
 	background-position: center;
 }
 
+html {
+	height: 100%;
+}
+
 /* Menü-Stil */
 .menu {
 	width: 200px;
@@ -33,10 +37,10 @@ body {
 #page-container {
     display: flex;
     flex-direction: column; /* Vertikale Anordnung */
-    min-height: 100%; /* Mindesthöhe ist die Höhe des Viewports */
+    min-height: 100vh; /* Mindesthöhe ist die Höhe des Viewports */
 }
 
-#content-wrap {
+.content-wrap {
     flex: 1; /* Ermöglicht, dass dieser Bereich den verfügbaren Raum einnimmt */
 }
 
