@@ -33,7 +33,7 @@ body {
 #page-container {
     display: flex;
     flex-direction: column; /* Vertikale Anordnung */
-    min-height: 100vh; /* Mindesthöhe ist die Höhe des Viewports */
+    min-height: 100%; /* Mindesthöhe ist die Höhe des Viewports */
 }
 
 #content-wrap {

@@ -8,38 +8,39 @@
 </head>
 <body>
 
-<div class="menu">
-    <!-- Ihr Menü -->
-    <ul>
-        <li>Menüpunkt 1</li>
-        <li>Menüpunkt 2</li>
-        <!-- Weitere Menüpunkte hinzufügen, falls benötigt -->
-    </ul>
-</div>
+<div id="page-container">
+	<div class="menu">
+		<!-- Ihr Menü -->
+		<ul>
+			<li>Menüpunkt 1</li>
+			<li>Menüpunkt 2</li>
+			<!-- Weitere Menüpunkte hinzufügen, falls benötigt -->
+		</ul>
+	</div>
 
-<div class="content">
-    <!-- Bild für die Frage -->
-    <img src="q1.jpg" alt="Bild zur Frage" class="question-image">
-    
-    <!-- Ihr Formular -->
-    <form id="quizForm">
-        <input type="text" id="answer" placeholder="Ihre Antwort hier eingeben">
-        <button type="button" onclick="checkAnswer()">Antwort absenden</button>
-    </form>
-</div>
+	<div class="content-wrap">
+		<!-- Bild für die Frage -->
+		<img src="q1.jpg" alt="Bild zur Frage" class="question-image">
+		
+		<!-- Ihr Formular -->
+		<form id="quizForm">
+			<input type="text" id="answer" placeholder="Ihre Antwort hier eingeben">
+			<button type="button" onclick="checkAnswer()">Antwort absenden</button>
+		</form>
+	</div>
 
-<!-- Der Footer -->
-<div class="footer">
-    <a href="#">Über uns</a>
-    <a href="#">Urlaubsziele</a>
-    <a href="#">Reisetipps</a>
-    <a href="#">Australiens Naturwunder</a>
-    <a href="#">Australiens Städte</a>
-    <a href="#">Kontakt</a>
-    <a href="#">Impressum</a>
-    <a href="#">Datenschutz</a>
+	<!-- Der Footer -->
+	<div class="footer">
+		<a href="#">Über uns</a>
+		<a href="#">Urlaubsziele</a>
+		<a href="#">Reisetipps</a>
+		<a href="#">Australiens Naturwunder</a>
+		<a href="#">Australiens Städte</a>
+		<a href="#">Kontakt</a>
+		<a href="#">Impressum</a>
+		<a href="#">Datenschutz</a>
+	</div>
 </div>
-
 <script>
     function checkAnswer() {
         var userAnswer = document.getElementById("answer").value;
