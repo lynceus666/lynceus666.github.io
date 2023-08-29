@@ -25,7 +25,7 @@ html {
 }
 
 /* Hauptinhalt Stil */
-.content {
+.content-wrap {
 	margin-left: 220px;
 	padding: 20px;
 }
@@ -39,11 +39,6 @@ html {
     flex-direction: column; /* Vertikale Anordnung */
     min-height: 100vh; /* Mindesthöhe ist die Höhe des Viewports */
 }
-
-.content-wrap {
-    flex: 1; /* Ermöglicht, dass dieser Bereich den verfügbaren Raum einnimmt */
-}
-
 
 /* Footer-Stile */
 .footer {
