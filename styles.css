@@ -40,6 +40,11 @@ html {
     background-color: #555;
 }
 
+.active-link {
+    background-color: #555; /* Oder eine andere Farbe Ihrer Wahl */
+    font-weight: bold;
+}
+
 .submenu {
     margin-left: 20px; /* Einrückung */
     border-left: 2px solid #555; /* Linie auf der linken Seite */
