@@ -13,15 +13,31 @@ html {
 }
 
 /* Menü-Stil */
+.menu-item .submenu {
+    display: none;  /* Versteckt die Unterkategorien standardmäßig */
+}
+
+.menu-item:hover .submenu {
+    display: block;  /* Zeigt die Unterkategorien an, wenn man mit der Maus über die Oberkategorie fährt */
+}
+
+/* Optional: Einige Grundstile für bessere Visualisierung */
 .menu {
-	width: 200px;
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.7);
-	color: #fff;
-	padding: 20px;
+    width: 200px;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+}
+
+.menu-link, .submenu a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.menu-link:hover, .submenu a:hover {
+    background-color: #555;
 }
 
 .question-image {
