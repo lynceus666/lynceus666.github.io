@@ -64,5 +64,27 @@
     }
 </script>
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Aktuellen Pfad der Webseite erhalten
+    var currentPath = window.location.pathname;
+
+    // Alle Links in den Menüs abrufen
+    var menuLinks = document.querySelectorAll('.menu a');
+
+    menuLinks.forEach(function(link) {
+        if (link.getAttribute('href') === currentPath) {
+            // Den aktiven Link markieren
+            link.classList.add('active-link');
+
+            // Übergeordnetes Menüelement (falls vorhanden) finden und erweitern
+            var parentMenu = link.closest('.submenu');
+            if (parentMenu) {
+                parentMenu.style.display = 'block';
+            }
+        }
+    });
+});
+
+
 </body>
 </html>
