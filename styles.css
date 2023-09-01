@@ -40,6 +40,18 @@ html {
     background-color: #555;
 }
 
+.submenu {
+    margin-left: 20px; /* Einrückung */
+    border-left: 2px solid #555; /* Linie auf der linken Seite */
+    padding-left: 10px; /* Zusätzlicher Abstand von der linken Grenze */
+}
+
+.submenu a {
+    background-color: #444; /* Dunklere Hintergrundfarbe */
+    margin-top: 5px; /* Abstand zwischen den Links */
+    display: block; /* Block-Stil, damit die Links die gesamte Breite einnehmen */
+}
+
 .question-image {
 	max-width: 300px;
 }
