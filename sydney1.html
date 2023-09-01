@@ -52,6 +52,27 @@
 	</div>
 </div>
 <script>
+	document.addEventListener('DOMContentLoaded', function() {
+		// Aktuellen Pfad der Webseite erhalten
+		var currentPath = window.location.pathname;
+
+		// Alle Links in den Menüs abrufen
+		var menuLinks = document.querySelectorAll('.menu a');
+
+		menuLinks.forEach(function(link) {
+			if (link.getAttribute('href') === currentPath) {
+				// Den aktiven Link markieren
+				link.classList.add('active-link');
+
+				// Übergeordnetes Menüelement (falls vorhanden) finden und erweitern
+				var parentMenu = link.closest('.submenu');
+				if (parentMenu) {
+					parentMenu.style.display = 'block';
+				}
+			}
+		});
+	});
+
     function checkAnswer() {
         var userAnswer = document.getElementById("answer").value;
         var correctAnswer = "RichtigeAntwort"; // Setzen Sie hier Ihre korrekte Antwort ein
@@ -62,28 +83,8 @@
             alert("Falsche Antwort! Bitte versuchen Sie es erneut.");
         }
     }
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Aktuellen Pfad der Webseite erhalten
-    var currentPath = window.location.pathname;
+	
 
-    // Alle Links in den Menüs abrufen
-    var menuLinks = document.querySelectorAll('.menu a');
-
-    menuLinks.forEach(function(link) {
-        if (link.getAttribute('href') === currentPath) {
-            // Den aktiven Link markieren
-            link.classList.add('active-link');
-
-            // Übergeordnetes Menüelement (falls vorhanden) finden und erweitern
-            var parentMenu = link.closest('.submenu');
-            if (parentMenu) {
-                parentMenu.style.display = 'block';
-            }
-        }
-    });
-});
 </script>
 
 
