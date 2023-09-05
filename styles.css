@@ -23,6 +23,7 @@ html {
 
 /* Optional: Einige Grundstile für bessere Visualisierung */
 .menu {
+	height: calc(100vh - 60px);  /* Die Zahl 60px kann je nach Größe Ihres Headers angepasst werden. */
     width: 200px;
     background-color: #333;
     color: white;
@@ -72,6 +73,7 @@ html {
 	margin-left: 220px;
 	padding: 40px;
 	padding-top: 0; /* Entfernt den oberen Abstand */
+	margin-top: 0;
 }
 
 
