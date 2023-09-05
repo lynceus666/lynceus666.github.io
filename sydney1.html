@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frage-Seite</title>
+    <title>Scavenger Hunt</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
@@ -13,8 +13,11 @@
 		<div class="menu-item">
 			<a href="#" class="menu-link">Sydney</a>
 			<div class="submenu">
-				<a href="/sydney1.html">Opernhaus</a>
-				<a href="/sydney2.html">Botanischer Garten</a>
+				<a href="ww1.html">Writers Walk 1</a>
+				<a href="ww2.html">Writers Walk 2</a>
+				<a href="ww3.html">Writers Walk 3</a>
+				<a href="ww4.html">Writers Walk 4</a>
+				<a href="ww5.html">Writers Walk 5</a>
 			</div>
 		</div>
 
@@ -34,25 +37,21 @@
 		
 		<!-- Ihr Formular -->
 		<form id="quizForm">
-			<input type="text" id="answer" placeholder="Ihre Antwort hier eingeben">
-			<button type="button" onclick="checkAnswer()">Antwort absenden</button>
+			<input type="text" id="answer" placeholder="Your answer">
+			<button type="button" onclick="checkAnswer()">Send</button>
 		</form>
 	</div>
 
 	<!-- Der Footer -->
 	<div class="footer">
-		<a href="#">Über uns</a>
-		<a href="#">Urlaubsziele</a>
-		<a href="#">Reisetipps</a>
-		<a href="#">Australiens Naturwunder</a>
-		<a href="#">Australiens Städte</a>
-		<a href="#">Kontakt</a>
-		<a href="#">Impressum</a>
-		<a href="#">Datenschutz</a>
+		<a href="#">About us</a>
+		<a href="#">Destinations</a>
+		<a href="#">Travel Tips</a>
+		<a href="#">Contact us</a>
+		<a href="#">Terms and Conditions</a>
 	</div>
 </div>
 <script>
-	console.log("Das Script wird ausgeführt");
 	document.addEventListener('DOMContentLoaded', function() {
 		// Aktuellen Pfad der Webseite erhalten
 		var currentPath = window.location.pathname;
@@ -85,7 +84,6 @@
         }
     }
 	
-
 </script>
 
 
