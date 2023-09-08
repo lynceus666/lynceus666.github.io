@@ -115,3 +115,22 @@ h1 {
 .footer a:hover {
 	color: #ffd700;
 }
+
+/* Stile für Bildschirme mit einer Breite bis zu 768px (also für die meisten Mobilgeräte) */
+@media (max-width: 768px) {
+    .menu {
+        width: 100%;
+        padding: 10px; /* Reduziere das Padding für Mobilgeräte */
+    }
+
+    .content-wrap {
+        margin-left: 0; /* Entferne den linken Abstand, um den gesamten Bildschirm auszunutzen */
+        padding: 10px; /* Reduziere das Padding für Mobilgeräte */
+    }
+
+    /* Optional: Erhöhe die Schriftgröße des Menüs für bessere Lesbarkeit auf kleinen Bildschirmen */
+    .menu-link, .submenu a {
+        font-size: 18px;
+        padding: 8px 10px;
+    }
+}
