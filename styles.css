@@ -23,12 +23,12 @@ html {
 
 /* Optional: Einige Grundstile für bessere Visualisierung */
 .menu {
-	height: calc(100vh - 60px);  /* Die Zahl 60px kann je nach Größe Ihres Headers angepasst werden. */
-    width: 200px;
+	height: auto;  /* Die Zahl 60px kann je nach Größe Ihres Headers angepasst werden. */
+    width: 220px;
     background-color: #333;
     color: white;
-    padding: 15px;
-	position: sticky;
+    padding: 20px;
+	position: relative;
 }
 
 .menu-link, .submenu a {
@@ -65,16 +65,13 @@ html {
 		
 #page-container {
     display: flex;
-    flex-direction: column; /* Vertikale Anordnung */
+    flex-direction: row; /* Vertikale Anordnung */
     min-height: 100vh; /* Mindesthöhe ist die Höhe des Viewports */
 }
 
 .content-wrap {
-    flex: 1; /* Ermöglicht, dass dieser Bereich den verfügbaren Raum einnimmt */
-	margin-left: 220px;
-	padding: 40px;
-	padding-top: 0; /* Entfernt den oberen Abstand */
-	margin-top: 0;
+    flex-grow: 1; /* Ermöglicht, dass dieser Bereich den verfügbaren Raum einnimmt */
+	padding: 20px;
 }
 
 
