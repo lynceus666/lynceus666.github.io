@@ -1,4 +1,4 @@
- /* Allgemeine Stile */
+/* Allgemeine Stile */
 body {
 	font-family: Arial, sans-serif;
 	margin: 0;
@@ -21,9 +21,8 @@ html {
     display: block;  /* Zeigt die Unterkategorien an, wenn man mit der Maus über die Oberkategorie fährt */
 }
 
-/* Optional: Einige Grundstile für bessere Visualisierung */
 .menu {
-	height: auto;  /* Die Zahl 60px kann je nach Größe Ihres Headers angepasst werden. */
+	height: auto;
     width: 220px;
     background-color: #333;
     color: white;
@@ -43,44 +42,45 @@ html {
 }
 
 .active-link {
-    background-color: #555; /* Oder eine andere Farbe Ihrer Wahl */
+    background-color: #555; 
     font-weight: bold;
 }
 
 .submenu {
-    margin-left: 20px; /* Einrückung */
-    border-left: 2px solid #555; /* Linie auf der linken Seite */
-    padding-left: 10px; /* Zusätzlicher Abstand von der linken Grenze */
+    margin-left: 20px; 
+    border-left: 2px solid #555; 
+    padding-left: 10px; 
 }
 
 .submenu a {
-    background-color: #444; /* Dunklere Hintergrundfarbe */
-    margin-top: 5px; /* Abstand zwischen den Links */
-    display: block; /* Block-Stil, damit die Links die gesamte Breite einnehmen */
+    background-color: #444; 
+    margin-top: 5px; 
+    display: block; 
 }
 
 .question-image {
 	max-width: 300px;
 }
-		
+
 #page-container {
+    flex-direction: column;
+}
+
+.main-content {
     display: flex;
-    flex-direction: row; /* Vertikale Anordnung */
-    min-height: 100vh; /* Mindesthöhe ist die Höhe des Viewports */
+    flex-direction: row;
 }
 
 .content-wrap {
-    flex-grow: 1; /* Ermöglicht, dass dieser Bereich den verfügbaren Raum einnimmt */
+    flex-grow: 1;
 	padding: 20px;
 }
 
-
 h1 {
-    margin-top: 0; /* Entfernt den oberen Abstand des Seitentitels */
-    font-size: 24px; /* Ändert die Schriftgröße des Seitentitels */
+    margin-top: 0; 
+    font-size: 24px; 
 }
 
-/* Footer-Stile */
 .footer {
 	background-color: #333;
 	color: #fff;
@@ -96,5 +96,5 @@ h1 {
 }
 
 .footer a:hover {
-	color: #ffd700; /* Goldfarben für einen australischen Touch */
+	color: #ffd700;
 }
