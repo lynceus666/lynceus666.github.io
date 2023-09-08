@@ -9,39 +9,42 @@
 <body>
 
 <div id="page-container">
-	<div class="menu">
-		<div class="menu-item">
-			<a href="#" class="menu-link">Sydney</a>
-			<div class="submenu">
-				<a href="/ww1.html">Writers Walk 1</a>
-				<a href="ww2.html">Writers Walk 2</a>
-				<a href="ww3.html">Writers Walk 3</a>
-				<a href="ww4.html">Writers Walk 4</a>
-				<a href="ww5.html">Writers Walk 5</a>
+	<div class="main-content">
+		<div class="menu">
+			<div class="menu-item">
+				<a href="#" class="menu-link">Sydney</a>
+				<div class="submenu">
+					<a href="ww1.html">Writers Walk 1</a>
+					<a href="ww2.html">Writers Walk 2</a>
+					<a href="ww3.html">Writers Walk 3</a>
+					<a href="ww4.html">Writers Walk 4</a>
+					<a href="ww5.html">Writers Walk 5</a>
+				</div>
 			</div>
+
+			<div class="menu-item">
+				<a href="#" class="menu-link">Blue Mountains</a>
+				<div class="submenu">
+					<!-- Unterkategorien für Blue Mountains -->
+				</div>
+			</div>
+
+			<!-- Weitere Menüpunkte -->
 		</div>
 
-		<div class="menu-item">
-			<a href="#" class="menu-link">Blue Mountains</a>
-			<div class="submenu">
-				<!-- Unterkategorien für Blue Mountains -->
-			</div>
+		<div class="content-wrap">
+		 <h1>Writers Walk 1</h1>
+			<!-- Bild für die Frage -->
+			<img src="pic/ww1.jpg" alt="image" class="question-image">
+			
+			<!-- Ihr Formular -->
+			<form id="quizForm">
+				<input type="text" id="answer" placeholder="Your answer">
+				<button type="button" onclick="checkAnswer()">Send</button>
+			</form>
 		</div>
-
-		<!-- Weitere Menüpunkte -->
 	</div>
-
-	<div class="content-wrap">
-	 <h1>Writers Walk 1</h1>
-		<!-- Bild für die Frage -->
-		<img src="pic/ww1.jpg" alt="image" class="question-image">
 		
-		<!-- Ihr Formular -->
-		<form id="quizForm">
-			<input type="text" id="answer" placeholder="Your answer">
-			<button type="button" onclick="checkAnswer()">Send</button>
-		</form>
-	</div>
 
 	<!-- Der Footer -->
 	<div class="footer">
