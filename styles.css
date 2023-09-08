@@ -84,6 +84,19 @@ h1 {
     font-size: 24px; 
 }
 
+.coords-box {
+	background-color: rgba(255, 255, 255, 0.7); /* Halbtransparenter weißer Hintergrund */
+	padding: 10px;
+	margin-top: 20px;
+	border-radius: 8px;
+}
+
+.question-text {
+	font-weight: bold;
+	font-size: 18px;
+	margin-top: 20px;
+}
+
 .footer {
 	background-color: #333;
 	color: #fff;
