@@ -123,6 +123,13 @@ h1 {
     display: block;
 }
 
+a[href^="https://www.google.com/maps"] {
+    color: #4285f4;             /* Google Blau */
+    text-decoration: underline; /* Unterstreichen für bessere Erkennbarkeit */
+    display: block;             /* Block-Level, damit er eine eigene Zeile einnimmt */
+    margin-top: 15px;           /* Etwas Abstand zum Bild */
+}
+
 /* Stile für Bildschirme mit einer Breite bis zu 768px (also für die meisten Mobilgeräte) */
 @media (max-width: 768px) {
     .menu {
