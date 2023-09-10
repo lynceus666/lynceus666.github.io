@@ -35,7 +35,7 @@
 		<div class="content-wrap">
 		 <h1>Writers Walk 1</h1>
 			<!-- Bild für die Frage -->
-			<img src="pic/ww1.jpg" alt="image" class="question-image">
+			<img src="pic/ww1.jpg" alt="image" class="question-image" id="fullscreenImage">
 			
 			<!-- Koordinatenbox -->
 			<div class="coords-box">
@@ -98,6 +98,16 @@
         }
     }
 	
+	
+	var img = document.getElementById('fullscreenImage');
+
+	img.addEventListener('click', function() {
+		if (document.fullscreenElement) {
+			document.exitFullscreen();
+		} else {
+			img.requestFullscreen();
+		}
+	});
 
 </script>
 
