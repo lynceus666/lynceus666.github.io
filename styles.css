@@ -130,6 +130,11 @@ a[href^="https://www.google.com/maps"] {
     margin-top: 15px;           /* Etwas Abstand zum Bild */
 }
 
+.highlight-letter {
+    font-weight: bold;
+    color: blue;
+}
+
 /* Stile für Bildschirme mit einer Breite bis zu 768px (also für die meisten Mobilgeräte) */
 @media (max-width: 768px) {
     .menu {
