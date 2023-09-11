@@ -51,7 +51,7 @@
 			<!-- Ihr Formular -->
 			<form id="quizForm">
 				<input type="text" id="answer" placeholder="Your answer">
-				<button type="button" onclick="checkAnswer()">Send</button>
+				<button type="submit">Send</button>
 				<div id="feedbackMessage" style="color: green; margin-top: 10px;"></div>
 			</form>
 		</div>
@@ -88,7 +88,13 @@
 			}
 		});
 	});
-
+	
+	//Catch Submit (instead of reloading page)
+	document.getElementById('quizForm').addEventListener('submit', function(event) {
+		event.preventDefault();  // Verhindert das Neuladen der Seite
+		checkAnswer();  // Ruft deine Überprüfungsfunktion auf
+	});
+	
 	var correctMessage = "Correct! Well done! <br>The <strong>2</strong>nd, <strong>10</strong>th and <strong>15</strong>th letter is <span class='highlight-letter'>L</span>";
 
 	//Check answer

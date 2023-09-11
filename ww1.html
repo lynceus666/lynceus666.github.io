@@ -51,7 +51,7 @@
 			<!-- Ihr Formular -->
 			<form id="quizForm">
 				<input type="text" id="answer" placeholder="Your answer">
-				<button type="button" onclick="checkAnswer()">Send</button>
+				<button type="submit">Send</button>
 				<div id="feedbackMessage" style="color: green; margin-top: 10px;"></div>
 			</form>
 		</div>
@@ -68,6 +68,8 @@
 	</div>
 </div>
 <script>
+
+	//Open Menu for selected site and highlight current site in menu
 	document.addEventListener('DOMContentLoaded', function() {
 		// Aktuellen Pfad der Webseite erhalten
 		var currentPath = window.location.pathname;
@@ -87,6 +89,12 @@
 				}
 			}
 		});
+	});
+	
+	//Catch Submit (instead of reloading page)
+	document.getElementById('quizForm').addEventListener('submit', function(event) {
+		event.preventDefault();  // Verhindert das Neuladen der Seite
+		checkAnswer();  // Ruft deine Überprüfungsfunktion auf
 	});
 	
 	var correctMessage = "Correct! Well done! <br>The <strong>1</strong>st letter is <span class='highlight-letter'>Z</span>";
@@ -120,6 +128,7 @@
 			img.requestFullscreen();
 		}
 	});
+	
 
 </script>
 
