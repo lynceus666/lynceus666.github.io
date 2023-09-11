@@ -91,11 +91,12 @@
 		});
 	});
 
+	var correctMessage = "Correct! Well done! <br>The 5th letter is <span class='highlight-letter'>V</span>";
+
 	//Check answer
     function checkAnswer() {
         var userAnswer = document.getElementById("answer").value.toLowerCase();
         var correctAnswer = "18591930192119201921"; // Setzen Sie hier Ihre korrekte Antwort ein
-		var correctMessage = "Correct! Well done! <br>The 5th letter is <span class='highlight-letter'>V</span>";
 		
         if(userAnswer === correctAnswer) {
 			localStorage.setItem("ww4", "true");

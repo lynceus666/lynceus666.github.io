@@ -90,11 +90,12 @@
 		});
 	});
 
+	var correctMessage = "Correct! Well done! <br>The 6th and 18th letter is <span class='highlight-letter'>W</span>";
+
 	//Check answer
     function checkAnswer() {
         var userAnswer = document.getElementById("answer").value.toLowerCase();
         var correctAnswer = "watkin tench"; // Setzen Sie hier Ihre korrekte Antwort ein
-		var correctMessage = "Correct! Well done! <br>The 6th and 18th letter is <span class='highlight-letter'>W</span>";
 		
         if(userAnswer === correctAnswer) {
 			localStorage.setItem("ww5", "true");

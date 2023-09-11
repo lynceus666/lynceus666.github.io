@@ -89,11 +89,12 @@
 		});
 	});
 
+	var correctMessage = "Correct! Well done! <br>The 2nd, 10th and 15th letter is <span class='highlight-letter'>L</span>";
+
 	//Check answer
     function checkAnswer() {
         var userAnswer = document.getElementById("answer").value.toLowerCase();
         var correctAnswer = "origin of species"; // Setzen Sie hier Ihre korrekte Antwort ein
-		var correctMessage = "Correct! Well done! <br>The 2nd, 10th and 15th letter is <span class='highlight-letter'>L</span>";
 		
         if(userAnswer === correctAnswer) {
 			localStorage.setItem("ww2", "true");
