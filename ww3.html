@@ -94,9 +94,9 @@
         var correctAnswer = "RichtigeAntwort"; // Setzen Sie hier Ihre korrekte Antwort ein
 
         if(userAnswer === correctAnswer) {
-            feedbackMessage.textContent = "Correct! Well done! <br>The 1st letter is <span class="highlight-letter">X</span>";
+            feedbackMessage.innerHTML = "Correct! Well done! <br>The 1st letter is <span class='highlight-letter'>X</span>";
         } else {
-            alert("Wrong answer! Try again!");
+            feedbackMessage.innerHTML = "Wrong answer!<br>Try again";
         }
     }
 	
