@@ -52,6 +52,7 @@
 			<form id="quizForm">
 				<input type="text" id="answer" placeholder="Your answer">
 				<button type="button" onclick="checkAnswer()">Send</button>
+				<div id="feedbackMessage" style="color: green; margin-top: 10px;"></div>
 			</form>
 		</div>
 	</div>
@@ -93,9 +94,9 @@
         var correctAnswer = "RichtigeAntwort"; // Setzen Sie hier Ihre korrekte Antwort ein
 
         if(userAnswer === correctAnswer) {
-            window.location.href = "naechsteSeite.html"; // Setzen Sie hier den Link zu Ihrer nächsten Seite ein
+            feedbackMessage.textContent = "Correct! Well done! <br>The 1st letter is <span class="highlight-letter">X</span>";
         } else {
-            alert("Falsche Antwort! Bitte versuchen Sie es erneut.");
+            alert("Wrong answer! Try again!");
         }
     }
 	
