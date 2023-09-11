@@ -51,7 +51,6 @@
 			<form id="quizForm">
 				<input type="text" id="answer" placeholder="Your answer">
 				<button type="button" onclick="checkAnswer()">Send</button>
-				<div id="feedbackMessage" style="color: green; margin-top: 10px;"></div>
 			</form>
 		</div>
 	</div>
@@ -91,12 +90,11 @@
     function checkAnswer() {
         var userAnswer = document.getElementById("answer").value;
         var correctAnswer = "RichtigeAntwort"; // Setzen Sie hier Ihre korrekte Antwort ein
-		var feedbackMessage = document.getElementById("feedbackMessage");
 
         if(userAnswer === correctAnswer) {
-            feedbackMessage.textContent = "Correct! The 5th letter is <span class="highlight-letter">C</span>.";
+            window.location.href = "naechsteSeite.html"; // Setzen Sie hier den Link zu Ihrer nächsten Seite ein
         } else {
-            feedbackMessage.textContent = "Wrong answer.";
+            alert("Falsche Antwort! Bitte versuchen Sie es erneut.");
         }
     }
 	
@@ -110,7 +108,6 @@
 			img.requestFullscreen();
 		}
 	});
-	
 
 </script>
 
