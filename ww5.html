@@ -52,6 +52,7 @@
 			<form id="quizForm">
 				<input type="text" id="answer" placeholder="Your answer">
 				<button type="button" onclick="checkAnswer()">Send</button>
+				<div id="feedbackMessage" style="color: green; margin-top: 10px;"></div>
 			</form>
 		</div>
 	</div>
@@ -88,17 +89,25 @@
 		});
 	});
 
+	//Check answer
     function checkAnswer() {
         var userAnswer = document.getElementById("answer").value;
         var correctAnswer = "RichtigeAntwort"; // Setzen Sie hier Ihre korrekte Antwort ein
 
         if(userAnswer === correctAnswer) {
-            window.location.href = "naechsteSeite.html"; // Setzen Sie hier den Link zu Ihrer nächsten Seite ein
+			localStorage.setItem("ww5", "true");
+            feedbackMessage.innerHTML = "Correct! Well done! <br>The 1st letter is <span class='highlight-letter'>X</span>";
         } else {
-            alert("Falsche Antwort! Bitte versuchen Sie es erneut.");
+            feedbackMessage.innerHTML = "Wrong answer!<br>Try again";
         }
     }
 	
+	// Check if question answered already
+	document.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem("ww5") === "true") {
+        feedbackMessage.innerHTML = "Correct! Well done! <br>The 1st letter is <span class='highlight-letter'>X</span>";
+    }
+	});
 	
 	var img = document.getElementById('fullscreenImage');
 
