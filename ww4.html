@@ -45,7 +45,9 @@
 			
 				<!-- Frage -->
 			<p class="question-text">
-				What is the name on the plaque you see in the picture?
+				Find the plaque from the author of Sherlock Holmes and enter every number you find on the plaque.<br>
+				Write just the numbers and in the order they are written on the plaque<br>
+				For example 19231925...
 			</p>
 	
 			<!-- Ihr Formular -->
@@ -91,12 +93,13 @@
 
 	//Check answer
     function checkAnswer() {
-        var userAnswer = document.getElementById("answer").value;
-        var correctAnswer = "RichtigeAntwort"; // Setzen Sie hier Ihre korrekte Antwort ein
-
+        var userAnswer = document.getElementById("answer").value.toLowerCase();
+        var correctAnswer = "18591930192119201921"; // Setzen Sie hier Ihre korrekte Antwort ein
+		var correctMessage = "Correct! Well done! <br>The 5th letter is <span class='highlight-letter'>V</span>";
+		
         if(userAnswer === correctAnswer) {
 			localStorage.setItem("ww4", "true");
-            feedbackMessage.innerHTML = "Correct! Well done! <br>The 1st letter is <span class='highlight-letter'>X</span>";
+            feedbackMessage.innerHTML = correctMessage;
         } else {
             feedbackMessage.innerHTML = "Wrong answer!<br>Try again";
         }
@@ -105,7 +108,7 @@
 	// Check if question answered already
 	document.addEventListener('DOMContentLoaded', function() {
     if (localStorage.getItem("ww4") === "true") {
-        feedbackMessage.innerHTML = "Correct! Well done! <br>The 1st letter is <span class='highlight-letter'>X</span>";
+        feedbackMessage.innerHTML = correctMessage;
     }
 	});
 	

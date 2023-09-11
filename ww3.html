@@ -91,12 +91,13 @@
 
 	//Check answer
     function checkAnswer() {
-        var userAnswer = document.getElementById("answer").value;
-        var correctAnswer = "RichtigeAntwort"; // Setzen Sie hier Ihre korrekte Antwort ein
-
+        var userAnswer = document.getElementById("answer").value.toLowerCase();
+        var correctAnswer = "mark twain"; // Setzen Sie hier Ihre korrekte Antwort ein
+		var correctMessage = "Correct! Well done! <br>The 3rd and 4th letter is <span class='highlight-letter'>O</span>";
+		
         if(userAnswer === correctAnswer) {
 			localStorage.setItem("ww3", "true");
-            feedbackMessage.innerHTML = "Correct! Well done! <br>The 1st letter is <span class='highlight-letter'>X</span>";
+            feedbackMessage.innerHTML = correctMessage;
         } else {
             feedbackMessage.innerHTML = "Wrong answer!<br>Try again";
         }
@@ -105,7 +106,7 @@
 	// Check if question answered already
 	document.addEventListener('DOMContentLoaded', function() {
     if (localStorage.getItem("ww3") === "true") {
-        feedbackMessage.innerHTML = "Correct! Well done! <br>The 1st letter is <span class='highlight-letter'>X</span>";
+        feedbackMessage.innerHTML = correctMessage;
     }
 	});
 	
