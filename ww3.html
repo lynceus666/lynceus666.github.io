@@ -89,17 +89,25 @@
 		});
 	});
 
+	//Check answer
     function checkAnswer() {
         var userAnswer = document.getElementById("answer").value;
         var correctAnswer = "RichtigeAntwort"; // Setzen Sie hier Ihre korrekte Antwort ein
 
         if(userAnswer === correctAnswer) {
+			localStorage.setItem("ww1", "true");
             feedbackMessage.innerHTML = "Correct! Well done! <br>The 1st letter is <span class='highlight-letter'>X</span>";
         } else {
             feedbackMessage.innerHTML = "Wrong answer!<br>Try again";
         }
     }
 	
+	// Check if question answered already
+	document.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem("ww1") === "true") {
+        feedbackMessage.innerHTML = "Correct! Well done! <br>The 1st letter is <span class='highlight-letter'>X</span>";
+    }
+	});
 	
 	var img = document.getElementById('fullscreenImage');
 
