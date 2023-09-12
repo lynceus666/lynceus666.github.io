@@ -37,19 +37,18 @@
 		</div>
 
 		<div class="content-wrap">
-		 <h1>Writers Walk 5</h1>
+		 <h1>Observatory Hill</h1>
 			<!-- Bild für die Frage -->
-			<img src="pic/ww5.jpg" alt="image" class="question-image" id="fullscreenImage">
+			<img src="pic/observatory.jpg" alt="image" class="question-image" id="fullscreenImage">
 			
 			<!-- Koordinatenbox -->
 			<div class="coords-box">
-				Coordinates: -33.8688° S, 151.2093° E <a href="https://www.google.com/maps?q=-33.859747,151.212847" target="_blank">Open in Google Maps</a>
+				Coordinates: -33.85894193112834, 151.20482958240152 <a href="https://www.google.com/maps?q=-33.85894193112834,151.20482958240152" target="_blank">Open in Google Maps</a>
 			</div>
 			
 				<!-- Frage -->
 			<p class="question-text">
-				Find the oldest writer (the one with the earliest birth date). <br>
-				What is his name?
+				How many horses are mentioned on the plaque?
 			</p>
 	
 			<!-- Ihr Formular -->
@@ -99,15 +98,15 @@
 		checkAnswer();  // Ruft deine Überprüfungsfunktion auf
 	});
 
-	var correctMessage = "Correct! Well done! <br>The <strong>6</strong>th and <strong>18</strong>th letter is <span class='highlight-letter'>W</span>";
+	var correctMessage = "Correct! Well done! <br>The <strong>7</strong>th letter is <span class='highlight-letter'>G</span>";
 
 	//Check answer
     function checkAnswer() {
         var userAnswer = document.getElementById("answer").value.toLowerCase();
-        var correctAnswer = "watkin tench"; // Setzen Sie hier Ihre korrekte Antwort ein
+        var correctAnswer = "5877"; // Setzen Sie hier Ihre korrekte Antwort ein
 		
         if(userAnswer === correctAnswer) {
-			localStorage.setItem("ww5", "true");
+			localStorage.setItem("observatory", "true");
             feedbackMessage.innerHTML = correctMessage;
         } else {
             feedbackMessage.innerHTML = "Wrong answer!<br>Try again";
@@ -116,7 +115,7 @@
 	
 	// Check if question answered already
 	document.addEventListener('DOMContentLoaded', function() {
-    if (localStorage.getItem("ww5") === "true") {
+    if (localStorage.getItem("observatory") === "true") {
         feedbackMessage.innerHTML = correctMessage;
     }
 	});
