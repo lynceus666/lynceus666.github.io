@@ -43,20 +43,20 @@
 		</div>
 
 		<div class="content-wrap">
-		 <h1>Queen Elizabeth Lookout</h1> <!-- XXX --> 
+		 <h1>Flinder's Pet</h1> <!-- XXX --> 
 			<!-- Bild für die Frage -->
-			<img src="pic/elizabeth.jpg" alt="image" class="question-image" id="fullscreenImage"> <!-- XXX --> 
-			<p class="image-credit">[Ref:014]</p> <!-- XXX -->
+			<img src="pic/pet.jpg" alt="image" class="question-image" id="fullscreenImage"> <!-- XXX --> 
+			<p class="image-credit">[Ref:015]</p> <!-- XXX -->
 			
 			<!-- Koordinatenbox -->
 			<div class="coords-box">
-				Coordinates: -33.73283151614504, 150.31203381388332 <a href="https://www.google.com/maps?q=-33.73283151614504,150.31203381388332" target="_blank">Open in Google Maps</a> <!-- XXX --> 
+				Coordinates: -33.86633154290013, 151.21271760440263 <a href="https://www.google.com/maps?q=-33.86633154290013,151.21271760440263" target="_blank">Open in Google Maps</a> <!-- XXX --> 
 			</div>
 			
 				<!-- Frage -->  
 			<p class="question-text"> 
-				Feel honored, for at this very spot, Queen Elizabeth once stood on February 12th.<br> <!-- XXX --> 
-				Can you figure out which year it was when she stood here?
+				Do you see the statue of Matthew Flinder's beloved pet?<br> <!-- XXX --> 
+				Can you find out it's (quite unusual) name?
 			</p>
 	
 			<!-- Ihr Formular -->
@@ -107,15 +107,15 @@
 		checkAnswer();  // Ruft deine Überprüfungsfunktion auf
 	});
 
-	var correctMessage = "Correct! Well done! <br>The <strong>19</strong>th letter is <span class='highlight-letter'>H</span>"; //XXX
+	var correctMessage = "Correct! Well done! <br>The <strong>20</strong>th letter is <span class='highlight-letter'>Q</span>"; //XXX
 
 	//Check answer
     function checkAnswer() {
         var userAnswer = document.getElementById("answer").value.toLowerCase();
-        var correctAnswer = "1954"; //XXX
+        var correctAnswer = "trim"; //XXX
 		
         if(userAnswer === correctAnswer) {
-			localStorage.setItem("elizabeth", "true");  //XXX
+			localStorage.setItem("pet", "true");  //XXX
             feedbackMessage.innerHTML = correctMessage;
         } else {
             feedbackMessage.innerHTML = "Wrong answer!<br>Try again";
@@ -124,7 +124,7 @@
 	
 	// Check if question answered already
 	document.addEventListener('DOMContentLoaded', function() {
-    if (localStorage.getItem("elizabeth") === "true") {   //XXX
+    if (localStorage.getItem("pet") === "true") {   //XXX
         feedbackMessage.innerHTML = correctMessage;
     }
 	});
