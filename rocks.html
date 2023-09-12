@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Credits</title>
+    <title>Scavenger Hunt</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
@@ -24,6 +24,7 @@
 					<a href="/opera.html">Sydney Opera House</a>
 					<a href="/botanic.html">Royal Botanic Gardens</a>
 					<a href="/hyde.html">Hyde Park</a>
+					<a href="/rocks.html">The Rocks</a>
 				</div>
 			</div>
 
@@ -38,42 +39,30 @@
 		</div>
 
 		<div class="content-wrap">
- <h1>Image Credits</h1>
- <br>
- <br>
-	<h2>Ref:001</h2>
-	<p><a href="https://commons.wikimedia.org/wiki/File:Robert_Louis_Stevenson_Sydney_Writers_Walk_plaque.jpg">Snapandrattle33</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons, image modified</p>
-	<br>
-	<h2>Ref:002</h2>
-    <p><a href="https://commons.wikimedia.org/wiki/File:Charles_Darwin_Sydney_Writers_Walk_plaque.jpg">Snapandrattle33</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons, image modified</p>
-	<br>
-	<h2>Ref:003</h2>
-    <p><a href="https://commons.wikimedia.org/wiki/File:Mark_Twain_Sydney_Writers_Walk_plaque.jpg">Snapandrattle33</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons, image modified</p>
-	<br>
-	<h2>Ref:004</h2>
-    <p><a href="https://commons.wikimedia.org/wiki/File:Arthur_Conan_Doyle_Sydney_Writers_Walk_plaque.jpg">Snapandrattle33</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons, image modified</p>
-	<br>
-	<h2>Ref:005</h2>
-	<p><a href="https://commons.wikimedia.org/wiki/File:Watkin_Tench_plaque_in_Sydney_Writers_Walk.jpg">Snapandrattle33</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons, image modified</p>
-	<br>
-   	<h2>Ref:006</h2>
-	<p><a href="https://commons.wikimedia.org/wiki/File:Observatory_Hill_Sydney.jpg">MDRX</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons</p>
-	<br>
-	<h2>Ref:007</h2>
-	<p>Own Photograph</p>
-	<br>
-    <h2>Ref:008</h2>
-    <p><a href="https://commons.wikimedia.org/wiki/File:Mrs_Macquarie%27s_Chair,_Mrs_Macquaries_Point,_Sydney_-_panoramio.jpg">Bob Linsdell</a>, <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>, via Wikimedia Commons, image modified</p>
-    <br>
-    <h2>Ref:009</h2>
-    <p>Own Photograph</p> 
-	<br>
-    <h2>Ref:010</h2>
-    <p><a href="https://commons.wikimedia.org/wiki/File:The_Rocks_Sydney._(21469793066).jpg">Bernard Spragg. NZ from Christchurch, New Zealand</a>, CC0, via Wikimedia Commons</p>
-   
-
-   
-   <!-- Other image credits go here... -->
+		 <h1>The Rocks</h1> <!-- XXX --> 
+			<!-- Bild für die Frage -->
+			<img src="pic/rocks.jpg" alt="image" class="question-image" id="fullscreenImage"> <!-- XXX --> 
+			<p class="image-credit">[Ref:010]</p> <!-- XXX -->
+			
+			<!-- Koordinatenbox -->
+			<div class="coords-box">
+				Coordinates: -33.85410747048266, 151.20949943250298 <a href="https://www.google.com/maps?q=-33.85410747048266,151.20949943250298" target="_blank">Open in Google Maps</a> <!-- XXX --> 
+			</div>
+			
+				<!-- Frage -->  
+			<p class="question-text"> 
+				There's a plaque affixed to the bridge telling about its contruction. <br> <!-- XXX --> 
+				The plaque is signed by M.A. Davidson and G.W. ... <br>
+				What is the last name of G.W. ? <br>
+				You don't have to actually go on the bridge to read it, you can see it from ground level.
+			</p>
+	
+			<!-- Ihr Formular -->
+			<form id="quizForm">
+				<input type="text" id="answer" placeholder="Your answer">
+				<button type="submit">Send</button>
+				<div id="feedbackMessage" style="color: green; margin-top: 10px;"></div>
+			</form>
 		</div>
 	</div>
 		
@@ -116,15 +105,15 @@
 		checkAnswer();  // Ruft deine Überprüfungsfunktion auf
 	});
 
-	var correctMessage = "Correct! Well done! <br>The <strong>6</strong>th and <strong>18</strong>th letter is <span class='highlight-letter'>W</span>";
+	var correctMessage = "Correct! Well done! <br>The <strong>12</strong>th and <strong>13</strong>th letter is <span class='highlight-letter'>K</span>"; //XXX
 
 	//Check answer
     function checkAnswer() {
         var userAnswer = document.getElementById("answer").value.toLowerCase();
-        var correctAnswer = "watkin tench"; // Setzen Sie hier Ihre korrekte Antwort ein
+        var correctAnswer = "mitchell"; //XXX
 		
         if(userAnswer === correctAnswer) {
-			localStorage.setItem("ww5", "true");
+			localStorage.setItem("rocks", "true");  //XXX
             feedbackMessage.innerHTML = correctMessage;
         } else {
             feedbackMessage.innerHTML = "Wrong answer!<br>Try again";
@@ -133,7 +122,7 @@
 	
 	// Check if question answered already
 	document.addEventListener('DOMContentLoaded', function() {
-    if (localStorage.getItem("ww5") === "true") {
+    if (localStorage.getItem("rocks") === "true") {   //XXX
         feedbackMessage.innerHTML = correctMessage;
     }
 	});
