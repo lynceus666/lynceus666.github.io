@@ -101,6 +101,12 @@ h2 {
 	margin-top: 20px;
 }
 
+.start-text {
+	font-family: 'Muli'; /* oder 'Lato', 'Open Sans' */
+	font-weight: 400; /* Normaler Text */
+    color: #333;
+}
+
 .image-credit {
 	font-size: 10px;
 }
