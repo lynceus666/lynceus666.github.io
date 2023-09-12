@@ -37,19 +37,19 @@
 		</div>
 
 		<div class="content-wrap">
-		 <h1>Sydney Opera House</h1>
+		 <h1>Royal Botanic Gardens</h1> <!-- XXX --> 
 			<!-- Bild für die Frage -->
-			<img src="pic/opera.jpg" alt="image" class="question-image" id="fullscreenImage">
-			<p class="image-credit">[Ref:007]</p> <!-- XXX -->
+			<img src="pic/botanic.jpg" alt="image" class="question-image" id="fullscreenImage"> <!-- XXX --> 
+			<p class="image-credit">[Ref:008]</p> <!-- XXX -->
 			
 			<!-- Koordinatenbox -->
 			<div class="coords-box">
-				Coordinates: -33.85751083838601, 151.21512565310317 <a href="https://www.google.com/maps?q=-33.85751083838601,151.21512565310317" target="_blank">Open in Google Maps</a>
+				Coordinates: -33.859660234278564, 151.22256765668135 <a href="https://www.google.com/maps?q=-33.859660234278564,151.22256765668135" target="_blank">Open in Google Maps</a> <!-- XXX --> 
 			</div>
 			
-				<!-- Frage -->
-			<p class="question-text">
-				How did Jørn Utzon call his spherical solution?
+				<!-- Frage -->  
+			<p class="question-text"> 
+				In what year was the road completed? <!-- XXX --> 
 			</p>
 	
 			<!-- Ihr Formular -->
@@ -100,15 +100,15 @@
 		checkAnswer();  // Ruft deine Überprüfungsfunktion auf
 	});
 
-	var correctMessage = "Correct! Well done! <br>The <strong>8</strong>th letter is <span class='highlight-letter'>X</span>";
+	var correctMessage = "Correct! Well done! <br>The <strong>9</strong>th letter is <span class='highlight-letter'>P</span>"; //XXX
 
 	//Check answer
     function checkAnswer() {
         var userAnswer = document.getElementById("answer").value.toLowerCase();
-        var correctAnswer = "key to the shells"; // Setzen Sie hier Ihre korrekte Antwort ein
+        var correctAnswer = "1816"; //XXX
 		
         if(userAnswer === correctAnswer) {
-			localStorage.setItem("opera", "true");
+			localStorage.setItem("botanic", "true");  //XXX
             feedbackMessage.innerHTML = correctMessage;
         } else {
             feedbackMessage.innerHTML = "Wrong answer!<br>Try again";
@@ -117,7 +117,7 @@
 	
 	// Check if question answered already
 	document.addEventListener('DOMContentLoaded', function() {
-    if (localStorage.getItem("opera") === "true") {
+    if (localStorage.getItem("botanic") === "true") {   //XXX
         feedbackMessage.innerHTML = correctMessage;
     }
 	});
