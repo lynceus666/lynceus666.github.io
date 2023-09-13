@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scavenger Hunt</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link id="originalStylesheet" rel="stylesheet" type="text/css" href="styles.css">
+	<link id="darkModeStylesheet" rel="stylesheet" type="text/css" href="dark.css" disabled>
 </head>
 <body>
 
@@ -117,8 +118,18 @@
         var correctAnswer = "origin of species"; // Setzen Sie hier Ihre korrekte Antwort ein
 		
         if(userAnswer === correctAnswer) {
-			localStorage.setItem("ww2", "true");
-            feedbackMessage.innerHTML = correctMessage;
+			feedbackMessage.innerHTML = correctMessage;
+			if (localStorage.getItem("ww2") !== "true") {
+				localStorage.setItem("ww2", "true");
+				//Check if conditions for dark mode are met
+				if (localStorage.getItem("ww1") === "true" &&
+				    localStorage.getItem("ww2") === "true" &&
+					localStorage.getItem("ww3") === "true" &&
+					localStorage.getItem("ww4") === "true" &&
+					localStorage.getItem("ww5") === "true") {
+						localStorage.setItem("dark", "true");
+						}
+            }
         } else {
             feedbackMessage.innerHTML = "Wrong answer!<br>Try again";
         }
@@ -130,17 +141,38 @@
         feedbackMessage.innerHTML = correctMessage;
     }
 	});
-	
-	var img = document.getElementById('fullscreenImage');
 
-	img.addEventListener('click', function() {
-		if (document.fullscreenElement) {
-			document.exitFullscreen();
-		} else {
-			img.requestFullscreen();
+	//Hamburger Menu
+	document.addEventListener('DOMContentLoaded', function() 
+	{
+		var menuToggle = document.getElementById('menu-toggle');
+		var menu = document.querySelector('.menu');
+		
+		if (menuToggle) 
+		{
+			menuToggle.addEventListener('click', function() 
+			{
+				if (menu.style.display === 'none' || menu.style.display === '') {
+					menu.style.display = 'block';
+				} else {
+					menu.style.display = 'none';
+				}
+			});
 		}
 	});
-
+	
+	
+	//Dark Mode check
+	document.addEventListener('DOMContentLoaded', function() {
+		if (localStorage.getItem("dark") === "true") {
+			// Aktiviere die darkmode.css Datei.
+			document.getElementById('darkModeStylesheet').removeAttribute('disabled');
+			
+			// Optional: Deaktiviere die ursprüngliche CSS-Datei, falls notwendig.
+			 document.getElementById('originalStylesheet').setAttribute('disabled', true);
+		}
+	});
+	
 </script>
 
 

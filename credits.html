@@ -158,17 +158,25 @@
         feedbackMessage.innerHTML = correctMessage;
     }
 	});
-	
-	var img = document.getElementById('fullscreenImage');
 
-	img.addEventListener('click', function() {
-		if (document.fullscreenElement) {
-			document.exitFullscreen();
-		} else {
-			img.requestFullscreen();
+	//Hamburger Menu
+	document.addEventListener('DOMContentLoaded', function() 
+	{
+		var menuToggle = document.getElementById('menu-toggle');
+		var menu = document.querySelector('.menu');
+		
+		if (menuToggle) 
+		{
+			menuToggle.addEventListener('click', function() 
+			{
+				if (menu.style.display === 'none' || menu.style.display === '') {
+					menu.style.display = 'block';
+				} else {
+					menu.style.display = 'none';
+				}
+			});
 		}
 	});
-
 </script>
 
 

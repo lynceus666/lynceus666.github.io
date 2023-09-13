@@ -118,8 +118,18 @@
         var correctAnswer = "watkin tench"; // Setzen Sie hier Ihre korrekte Antwort ein
 		
         if(userAnswer === correctAnswer) {
-			localStorage.setItem("ww5", "true");
-            feedbackMessage.innerHTML = correctMessage;
+			feedbackMessage.innerHTML = correctMessage;
+			if (localStorage.getItem("ww5") !== "true") {
+				localStorage.setItem("ww5", "true");
+				//Check if conditions for dark mode are met
+				if (localStorage.getItem("ww1") === "true" &&
+				    localStorage.getItem("ww2") === "true" &&
+					localStorage.getItem("ww3") === "true" &&
+					localStorage.getItem("ww4") === "true" &&
+					localStorage.getItem("ww5") === "true") {
+						localStorage.setItem("dark", "true");
+						}
+            }
         } else {
             feedbackMessage.innerHTML = "Wrong answer!<br>Try again";
         }
@@ -132,16 +142,26 @@
     }
 	});
 	
-	var img = document.getElementById('fullscreenImage');
-
-	img.addEventListener('click', function() {
-		if (document.fullscreenElement) {
-			document.exitFullscreen();
-		} else {
-			img.requestFullscreen();
+	//Hamburger Menu
+	document.addEventListener('DOMContentLoaded', function() 
+	{
+		var menuToggle = document.getElementById('menu-toggle');
+		var menu = document.querySelector('.menu');
+		
+		if (menuToggle) 
+		{
+			menuToggle.addEventListener('click', function() 
+			{
+				if (menu.style.display === 'none' || menu.style.display === '') {
+					menu.style.display = 'block';
+				} else {
+					menu.style.display = 'none';
+				}
+			});
 		}
 	});
-
+	
+	
 </script>
 
 
