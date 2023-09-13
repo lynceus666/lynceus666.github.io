@@ -10,6 +10,9 @@
 
 <div id="page-container">
 	<div class="main-content">
+		<button id="menu-toggle" class="hamburger-menu">
+			&#9776; Menu
+		</button>
 		<div class="menu">
 			<div class="menu-item">
 				<a href="/index.html" class="menu-link">Start</a>
@@ -41,33 +44,54 @@
 					<a href="/cahill.html">Cahill's Lookout</a>
 				</div>
 			</div>
+			
+			<div class="menu-item">
+				<a href="/solve.html" class="menu-link">Solve It</a>
+			</div>
 
 			<!-- Weitere Menüpunkte -->
 		</div>
 
 		<div class="content-wrap">
-		 <h1>Flinder's Pet</h1> <!-- XXX --> 
+		 <h1>Final Question</h1> <!-- XXX --> 
 			<!-- Bild für die Frage -->
 			<img src="pic/pet.jpg" alt="image" class="question-image" id="fullscreenImage"> <!-- XXX --> 
 			<p class="image-credit">[Ref:015]</p> <!-- XXX -->
-			
-			<!-- Koordinatenbox -->
-			<div class="coords-box">
-				Coordinates: -33.86633154290013, 151.21271760440263 <a href="https://www.google.com/maps?q=-33.86633154290013,151.21271760440263" target="_blank">Open in Google Maps</a> <!-- XXX --> 
-			</div>
-			
+			<br><br>
 				<!-- Frage -->  
-			<p class="question-text"> 
-				Do you see the statue of Matthew Flinder's beloved pet?<br> <!-- XXX --> 
-				Can you find out it's (quite unusual) name?
-			</p>
+			<div class="letters-container">
+				<div class="letter-group">
+					<span data-letter="A" class="mystery-letter">?</span>
+					<span data-letter="B" class="mystery-letter">?</span>
+					<span data-letter="A" class="mystery-letter">?</span>
+					<span data-letter="B" class="mystery-letter">?</span>
+					<span data-letter="A" class="mystery-letter">?</span>
+					<span data-letter="B" class="mystery-letter">?</span>
+				</div>
+				<div class="letter-group">
+					<span data-letter="A" class="mystery-letter">?</span>
+					<span data-letter="B" class="mystery-letter">?</span>
+				</div>
+				<div class="letter-group">
+					<span data-letter="A" class="mystery-letter">?</span>
+					<span data-letter="B" class="mystery-letter">?</span>
+					<span data-letter="A" class="mystery-letter">?</span>
+					<span data-letter="B" class="mystery-letter">?</span>
+				</div>
+				<div class="letter-group">
+					<span data-letter="A" class="mystery-letter">?</span>
+					<span data-letter="B" class="mystery-letter">?</span>
+					<span data-letter="A" class="mystery-letter">?</span>
+					<span data-letter="B" class="mystery-letter">?</span>
+					<span data-letter="A" class="mystery-letter">?</span>
+					<span data-letter="B" class="mystery-letter">?</span>
+					<span data-letter="A" class="mystery-letter">?</span>
+					<span data-letter="B" class="mystery-letter">?</span>
+					<span data-letter="A" class="mystery-letter">?</span>
+				</div>
+			</div>
 	
-			<!-- Ihr Formular -->
-			<form id="quizForm">
-				<input type="text" id="answer" placeholder="Your answer">
-				<button type="submit">Send</button>
-				<div id="feedbackMessage" style="color: green; margin-top: 10px;"></div>
-			</form>
+			
 		</div>
 	</div>
 		
@@ -104,12 +128,6 @@
 		});
 	});
 
-	//Catch Submit (instead of reloading page)
-	document.getElementById('quizForm').addEventListener('submit', function(event) {
-		event.preventDefault();  // Verhindert das Neuladen der Seite
-		checkAnswer();  // Ruft deine Überprüfungsfunktion auf
-	});
-
 	var correctMessage = "Correct! Well done! <br>The <strong>20</strong>th letter is <span class='highlight-letter'>Q</span>"; //XXX
 
 	//Check answer
@@ -141,6 +159,22 @@
 			img.requestFullscreen();
 		}
 	});
+	
+	//Hamburger Menu
+document.addEventListener('DOMContentLoaded', function() {
+    var menuToggle = document.getElementById('menu-toggle');
+    var menu = document.querySelector('.menu');
+    
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        });
+    }
+});
 
 </script>
 

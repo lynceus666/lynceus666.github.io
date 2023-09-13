@@ -149,13 +149,54 @@ a[href^="https://www.google.com/maps"] {
     color: blue;
 }
 
+.letters-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px; /* Abstand zwischen den Buchstaben */
+    padding: 20px;
+    background-color: #eee; /* Hintergrundfarbe, die du anpassen kannst */
+    border: 2px solid #333; /* Rahmen um den Buchstabencontainer */
+}
+
+.mystery-letter {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+    padding: 5px 5px;
+    transition: color 0.3s;
+}
+
+.mystery-letter.revealed {
+    color: green; /* Farbe für freigelegte Buchstaben */
+}
+
+.letter-group {
+    display: block;
+    width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+    .menu {
+        display: block;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+}
+
 /* Stile für Bildschirme mit einer Breite bis zu 768px (also für die meisten Mobilgeräte) */
 @media (max-width: 768px) {
     .menu {
         width: 100%;
         padding: 10px; /* Reduziere das Padding für Mobilgeräte */
+		 display: none;
     }
-
+	
+	#menu-toggle {
+		display: block;
+	}
     .content-wrap {
         margin-left: 0; /* Entferne den linken Abstand, um den gesamten Bildschirm auszunutzen */
         padding: 10px; /* Reduziere das Padding für Mobilgeräte */
@@ -166,4 +207,22 @@ a[href^="https://www.google.com/maps"] {
         font-size: 18px;
         padding: 8px 10px;
     }
+	
+	/* Hamburger-Menü-Button-Styling */
+    .hamburger-menu {
+        display: block;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        padding: 10px 15px;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+    }
+
+    .hamburger-menu:hover {
+        background-color: #555;
+    }
+	
+
 }
