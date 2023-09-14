@@ -173,6 +173,10 @@ a[href^="https://www.google.com/maps"] {
     width: 100%;
 }
 
+.transition-background {
+    transition: background-color 6s;
+}
+
 @keyframes fillBlack {
     from {
         background-color: transparent;
@@ -182,9 +186,6 @@ a[href^="https://www.google.com/maps"] {
     }
 }
 
-body.animate-dark {
-    animation: fillBlack 5s forwards;
-}
 
 .hashes {
     display: none; /* Am Anfang unsichtbar */
