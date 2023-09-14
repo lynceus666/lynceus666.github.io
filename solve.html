@@ -51,8 +51,7 @@
 		<div class="content-wrap">
 		 <h1>Final Question</h1> <!-- XXX --> 
 			<!-- Bild für die Frage -->
-			<img src="pic/pet.jpg" alt="image" class="question-image" id="fullscreenImage"> <!-- XXX --> 
-			<p class="image-credit">[Ref:015]</p> <!-- XXX -->
+			<img src="pic/questionMark.jpg" alt="image" class="question-image" id="fullscreenImage"> <!-- XXX --> 
 			<br><br>
 				<!-- Frage -->  
 			<div class="letters-container">
@@ -557,6 +556,15 @@
 		// String.fromCharCode() gibt den Zeichen-String aus seinem UTF-16-Code zurück.
 		// charCodeAt() gibt den UTF-16-Code des Zeichens am angegebenen Index zurück.
 		return String.fromCharCode(letter.charCodeAt(0) - 1);
+	}
+	
+	function countSolvedLetters() {
+		var solvedLetters = document.querySelectorAll('.mystery-letter-solved');
+		if(solvedLetters.length === 20)
+		{
+			var imageElement = document.getElementById('fullscreenImage');
+			imageElement.src = '/pic/IMG_20220927_122911.jpg';
+		}
 	}
 	
 </script>
