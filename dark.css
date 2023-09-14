@@ -6,6 +6,7 @@ body {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
+	transition: background-color 4s; /* Hinzugefügte Zeile */
 }
 
 html {
