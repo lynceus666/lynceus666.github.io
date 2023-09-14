@@ -57,33 +57,33 @@
 				<!-- Frage -->  
 			<div class="letters-container">
 				<div class="letter-group">
-					<span data-letter="A" class="mystery-letter">?</span>
-					<span data-letter="B" class="mystery-letter">?</span>
-					<span data-letter="A" class="mystery-letter">?</span>
-					<span data-letter="B" class="mystery-letter">?</span>
-					<span data-letter="A" class="mystery-letter">?</span>
-					<span data-letter="B" class="mystery-letter">?</span>
+					<span data-letter="A" class="mystery-letter" id="letter01">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter02">?</span>
+					<span data-letter="A" class="mystery-letter" id="letter03">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter04">?</span>
+					<span data-letter="A" class="mystery-letter" id="letter05">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter06">?</span>
 				</div>
 				<div class="letter-group">
-					<span data-letter="A" class="mystery-letter">?</span>
-					<span data-letter="B" class="mystery-letter">?</span>
+					<span data-letter="A" class="mystery-letter" id="letter07">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter08">?</span>
 				</div>
 				<div class="letter-group">
-					<span data-letter="A" class="mystery-letter">?</span>
-					<span data-letter="B" class="mystery-letter">?</span>
-					<span data-letter="A" class="mystery-letter">?</span>
-					<span data-letter="B" class="mystery-letter">?</span>
+					<span data-letter="A" class="mystery-letter" id="letter09">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter10">?</span>
+					<span data-letter="A" class="mystery-letter" id="letter11">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter12">?</span>
 				</div>
 				<div class="letter-group">
-					<span data-letter="A" class="mystery-letter">?</span>
-					<span data-letter="B" class="mystery-letter">?</span>
-					<span data-letter="A" class="mystery-letter">?</span>
-					<span data-letter="B" class="mystery-letter">?</span>
-					<span data-letter="A" class="mystery-letter">?</span>
-					<span data-letter="B" class="mystery-letter">?</span>
-					<span data-letter="A" class="mystery-letter">?</span>
-					<span data-letter="B" class="mystery-letter">?</span>
-					<span data-letter="A" class="mystery-letter">?</span>
+					<span data-letter="A" class="mystery-letter" id="letter13">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter14">?</span>
+					<span data-letter="A" class="mystery-letter" id="letter15">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter16">?</span>
+					<span data-letter="A" class="mystery-letter" id="letter17">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter18">?</span>
+					<span data-letter="A" class="mystery-letter" id="letter19">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter20">?</span>
+					<span data-letter="A" class="mystery-letter" id="letter21">?</span>
 				</div>
 			</div>
 	
@@ -158,14 +158,26 @@
 		}
 	});
 	
+	function revealLetterForCondition(conditionKey, letterId, revealedLetter) {
+    if (localStorage.getItem(conditionKey) === "true") {
+        var letter = document.getElementById(letterId);
+        letter.textContent = revealedLetter;
+        letter.classList.add('revealed');
+    }
+}
+	
 	//Color answered Links
 	if (localStorage.getItem("ww1") === "true")
 	{
 		document.querySelector('.link-ww1').classList.add('correct-link'); //Green Checkmark
+		//Reveal letter
+		
+		
 	}
 	if (localStorage.getItem("ww2") === "true")
 	{
 		document.querySelector('.link-ww2').classList.add('correct-link'); //Green Checkmark
+		revealLetterForCondition("ww1", "letter01", "W");
 	}
 	if (localStorage.getItem("ww3") === "true")
 	{
@@ -219,6 +231,7 @@
 	{
 		document.querySelector('.link-cahill').classList.add('correct-link'); //Green Checkmark
 	}
+	
 </script>
 
 
