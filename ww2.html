@@ -128,6 +128,8 @@
 					localStorage.getItem("ww4") === "true" &&
 					localStorage.getItem("ww5") === "true") {
 						localStorage.setItem("dark", "true");
+						document.getElementById('darkModeStylesheet').removeAttribute('disabled');
+						document.getElementById('originalStylesheet').setAttribute('disabled', true);
 						}
             }
         } else {
