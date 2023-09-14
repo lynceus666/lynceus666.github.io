@@ -133,6 +133,7 @@
 					localStorage.getItem("ww3") === "true" &&
 					localStorage.getItem("ww4") === "true" &&
 					localStorage.getItem("ww5") === "true") {
+						openPopup();
 						localStorage.setItem("dark", "true");
 						document.getElementById('darkModeStylesheet').removeAttribute('disabled');
 						document.getElementById('originalStylesheet').setAttribute('disabled', true);
@@ -256,8 +257,29 @@
 	{
 		document.querySelector('.link-cahill').classList.add('correct-link'); //Green Checkmark
 	}
+	
+	function openPopup() {
+		document.getElementById('popupOverlay').style.display = 'block';
+	}
+
+	function closePopup() {
+		document.getElementById('popupOverlay').style.display = 'none';
+	}
 </script>
 
-
+<div id="popupOverlay" class="popup-overlay">
+    <div class="popup-content">
+        <span class="popup-close-btn" onclick="closePopup()">&times;</span>
+        <p>Gday and SURPRISE, fellow junior-detective from Germany!<br>
+		   We are the <span class="hash white">#</span><span class="hash red">#</span><span class="hash blue">#</span> (Australian divison)<br><br>
+		   This was just a test to see if you really are detective-material.<br><br>
+		   We need you to travel through Sydney and to the Blue Mountains.<br><br>
+		   On your way you will find clues to unlock letters for our final question.<br>
+		   The letters alone won't make any sense, but in the end you can hopefully decode everything.<br>
+		   Once you travelled to all locations and unlocked all the letters, you can go to the final question.<br>
+		   Good luck!
+			</p>
+    </div>
+</div>
 </body>
 </html>
