@@ -257,7 +257,7 @@
 			var nextLetter = getNextLetter(currentLetter);
 			letterElement.textContent = nextLetter;
 			if (nextLetter === 'W') {
-				letterElement.classList.add('mystery-letter.solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
 				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
 			}
 		});

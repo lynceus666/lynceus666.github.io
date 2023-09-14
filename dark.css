@@ -168,7 +168,7 @@ a[href^="https://www.google.com/maps"] {
     color: red; /* Farbe für freigelegte Buchstaben */
 }
 
-.mystery-letter.solved {
+.mystery-letter-solved {
     color: green;  // Grüne Farbe, diese können Sie nach Belieben ändern
 }
 
