@@ -165,7 +165,11 @@ a[href^="https://www.google.com/maps"] {
 }
 
 .mystery-letter.revealed {
-    color: green; /* Farbe für freigelegte Buchstaben */
+    color: red; /* Farbe für freigelegte Buchstaben */
+}
+
+.mystery-letter.solved {
+    color: green;  // Grüne Farbe, diese können Sie nach Belieben ändern
 }
 
 .letter-group {
@@ -226,6 +230,7 @@ a[href^="https://www.google.com/maps"] {
 .hash.blue {
     color: #009fe3;
 }
+
 
 @media screen and (min-width: 769px) {
     .menu {
