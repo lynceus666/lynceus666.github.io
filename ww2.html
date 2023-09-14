@@ -8,7 +8,9 @@
 	<link id="darkModeStylesheet" rel="stylesheet" type="text/css" href="dark.css" disabled>
 </head>
 <body>
-
+<div id="darkModeToast" class="toast">
+    Dark Mode aktiviert!
+</div>
 <div id="page-container">
 	<div class="main-content">
 		<button id="menu-toggle" class="hamburger-menu">
@@ -131,12 +133,23 @@
 						document.getElementById('darkModeStylesheet').removeAttribute('disabled');
 						document.getElementById('originalStylesheet').setAttribute('disabled', true);
 						document.body.classList.add('animate-dark');
+						showDarkModeToast();
 						}
             }
         } else {
             feedbackMessage.innerHTML = "Wrong answer!<br>Try again";
         }
     }
+	
+	//Toast
+	function showDarkModeToast() {
+		var toast = document.getElementById('darkModeToast');
+		toast.classList.add('show');
+		setTimeout(function(){
+			toast.classList.remove('show');
+		}, 3000); // Die Nachricht wird nach 3 Sekunden ausgeblendet
+	}
+	
 	
 	// Check if question answered already
 	document.addEventListener('DOMContentLoaded', function() {
