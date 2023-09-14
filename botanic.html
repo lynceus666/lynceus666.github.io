@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scavenger Hunt</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link id="originalStylesheet" rel="stylesheet" type="text/css" href="styles.css">
+	<link id="darkModeStylesheet" rel="stylesheet" type="text/css" href="dark.css" disabled>
 </head>
 <body>
 
@@ -150,6 +151,16 @@
 		}
 	});
 
+	//Dark Mode check
+	document.addEventListener('DOMContentLoaded', function() {
+		if (localStorage.getItem("dark") === "true") {
+			// Aktiviere die darkmode.css Datei.
+			document.getElementById('darkModeStylesheet').removeAttribute('disabled');
+			
+			// Optional: Deaktiviere die ursprüngliche CSS-Datei, falls notwendig.
+			 document.getElementById('originalStylesheet').setAttribute('disabled', true);
+		}
+	});
 </script>
 
 
