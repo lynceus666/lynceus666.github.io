@@ -84,6 +84,11 @@
 	</div>
 </div>
 <script>
+	var correctMessage = "Correct! Well done! <br>The <strong>19</strong>th letter is <span class='highlight-letter'>H</span>"; //XXX
+	var correctAnswer = "1954"; //XXX
+
+	document.body.classList.remove("transition-background");
+
 	document.addEventListener('DOMContentLoaded', function() {
 		// Aktuellen Pfad der Webseite erhalten
 		var currentPath = window.location.pathname;
@@ -104,23 +109,48 @@
 			}
 		});
 	});
-
+	
 	//Catch Submit (instead of reloading page)
 	document.getElementById('quizForm').addEventListener('submit', function(event) {
 		event.preventDefault();  // Verhindert das Neuladen der Seite
 		checkAnswer();  // Ruft deine Überprüfungsfunktion auf
 	});
-
-	var correctMessage = "Correct! Well done! <br>The <strong>19</strong>th letter is <span class='highlight-letter'>H</span>"; //XXX
-
+	
+	
 	//Check answer
     function checkAnswer() {
         var userAnswer = document.getElementById("answer").value.toLowerCase();
-        var correctAnswer = "1954"; //XXX
 		
         if(userAnswer === correctAnswer) {
-			localStorage.setItem("elizabeth", "true");  //XXX
-            feedbackMessage.innerHTML = correctMessage;
+			feedbackMessage.innerHTML = correctMessage;
+			if (localStorage.getItem("elizabeth") !== "true") {
+				localStorage.setItem("elizabeth", "true");
+				document.querySelector('.link-elizabeth').classList.add('correct-link'); //Green Checkmark
+				//Check if conditions for dark mode are met
+				if (localStorage.getItem("ww1") === "true" &&
+				    localStorage.getItem("ww2") === "true" &&
+					localStorage.getItem("ww3") === "true" &&
+					localStorage.getItem("ww4") === "true" &&
+					localStorage.getItem("ww5") === "true") {
+						localStorage.setItem("dark", "true");
+						document.getElementById('darkModeStylesheet').removeAttribute('disabled');
+						document.getElementById('originalStylesheet').setAttribute('disabled', true);
+						document.body.classList.add("transition-background");
+						//###
+						
+						//Transition to Black
+						document.body.style.transition = "background-color 6s";
+						
+						document.getElementById("hashNotification").style.display = "block"; // Zeigt die # Zeichen an
+						
+						// Optional: Nach ein paar Sekunden ausblenden
+						setTimeout(function() {
+							document.getElementById("hashNotification").style.display = "none";
+						}, 3000); // 3000 Millisekunden = 3 Sekunden
+						
+						
+						}
+            }
         } else {
             feedbackMessage.innerHTML = "Wrong answer!<br>Try again";
         }
@@ -128,11 +158,11 @@
 	
 	// Check if question answered already
 	document.addEventListener('DOMContentLoaded', function() {
-    if (localStorage.getItem("elizabeth") === "true") {   //XXX
+    if (localStorage.getItem("elizabeth") === "true") {
         feedbackMessage.innerHTML = correctMessage;
     }
 	});
-	
+
 	//Hamburger Menu
 	document.addEventListener('DOMContentLoaded', function() 
 	{
@@ -151,7 +181,8 @@
 			});
 		}
 	});
-
+	
+	
 	//Dark Mode check
 	document.addEventListener('DOMContentLoaded', function() {
 		if (localStorage.getItem("dark") === "true") {
@@ -162,6 +193,68 @@
 			 document.getElementById('originalStylesheet').setAttribute('disabled', true);
 		}
 	});
+	
+	//Color answered Links
+	if (localStorage.getItem("ww1") === "true")
+	{
+		document.querySelector('.link-ww1').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("ww2") === "true")
+	{
+		document.querySelector('.link-ww2').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("ww3") === "true")
+	{
+		document.querySelector('.link-ww3').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("ww4") === "true")
+	{
+		document.querySelector('.link-ww4').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("ww5") === "true")
+	{
+		document.querySelector('.link-ww5').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("observatory") === "true")
+	{
+		document.querySelector('.link-observatory').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("opera") === "true")
+	{
+		document.querySelector('.link-opera').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("botanic") === "true")
+	{
+		document.querySelector('.link-botanic').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("pet") === "true")
+	{
+		document.querySelector('.link-pet').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("hyde") === "true")
+	{
+		document.querySelector('.link-hyde').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("rocks") === "true")
+	{
+		document.querySelector('.link-rocks').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("manly") === "true")
+	{
+		document.querySelector('.link-manly').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("echoPoint") === "true")
+	{
+		document.querySelector('.link-echoPoint').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("elizabeth") === "true")
+	{
+		document.querySelector('.link-elizabeth').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("cahill") === "true")
+	{
+		document.querySelector('.link-cahill').classList.add('correct-link'); //Green Checkmark
+	}
 </script>
 
 

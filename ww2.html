@@ -93,8 +93,8 @@
 	</div>
 </div>
 <script>
-
-	
+	var correctMessage = "Correct! Well done! <br>The <strong>2</strong>nd, <strong>10</strong>th and <strong>15</strong>th letter is <span class='highlight-letter'>L</span>";
+	var correctAnswer = "origin of species"; // Setzen Sie hier Ihre korrekte Antwort ein
 	
 	document.body.classList.remove("transition-background");
 
@@ -125,12 +125,10 @@
 		checkAnswer();  // Ruft deine Überprüfungsfunktion auf
 	});
 	
-	var correctMessage = "Correct! Well done! <br>The <strong>2</strong>nd, <strong>10</strong>th and <strong>15</strong>th letter is <span class='highlight-letter'>L</span>";
 	
 	//Check answer
     function checkAnswer() {
         var userAnswer = document.getElementById("answer").value.toLowerCase();
-        var correctAnswer = "origin of species"; // Setzen Sie hier Ihre korrekte Antwort ein
 		
         if(userAnswer === correctAnswer) {
 			feedbackMessage.innerHTML = correctMessage;

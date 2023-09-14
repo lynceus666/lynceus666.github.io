@@ -90,6 +90,8 @@
 	</div>
 </div>
 <script>
+	document.body.classList.remove("transition-background");
+
 	document.addEventListener('DOMContentLoaded', function() {
 		// Aktuellen Pfad der Webseite erhalten
 		var currentPath = window.location.pathname;
@@ -111,34 +113,6 @@
 		});
 	});
 
-	//Catch Submit (instead of reloading page)
-	document.getElementById('quizForm').addEventListener('submit', function(event) {
-		event.preventDefault();  // Verhindert das Neuladen der Seite
-		checkAnswer();  // Ruft deine Überprüfungsfunktion auf
-	});
-
-	var correctMessage = "Correct! Well done! <br>The <strong>20</strong>th letter is <span class='highlight-letter'>Q</span>"; //XXX
-
-	//Check answer
-    function checkAnswer() {
-        var userAnswer = document.getElementById("answer").value.toLowerCase();
-        var correctAnswer = "trim"; //XXX
-		
-        if(userAnswer === correctAnswer) {
-			localStorage.setItem("pet", "true");  //XXX
-            feedbackMessage.innerHTML = correctMessage;
-        } else {
-            feedbackMessage.innerHTML = "Wrong answer!<br>Try again";
-        }
-    }
-	
-	// Check if question answered already
-	document.addEventListener('DOMContentLoaded', function() {
-    if (localStorage.getItem("pet") === "true") {   //XXX
-        feedbackMessage.innerHTML = correctMessage;
-    }
-	});
-	
 	//Hamburger Menu
 	document.addEventListener('DOMContentLoaded', function() 
 	{
@@ -158,6 +132,7 @@
 		}
 	});
 	
+	
 	//Dark Mode check
 	document.addEventListener('DOMContentLoaded', function() {
 		if (localStorage.getItem("dark") === "true") {
@@ -168,6 +143,68 @@
 			 document.getElementById('originalStylesheet').setAttribute('disabled', true);
 		}
 	});
+	
+	//Color answered Links
+	if (localStorage.getItem("ww1") === "true")
+	{
+		document.querySelector('.link-ww1').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("ww2") === "true")
+	{
+		document.querySelector('.link-ww2').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("ww3") === "true")
+	{
+		document.querySelector('.link-ww3').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("ww4") === "true")
+	{
+		document.querySelector('.link-ww4').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("ww5") === "true")
+	{
+		document.querySelector('.link-ww5').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("observatory") === "true")
+	{
+		document.querySelector('.link-observatory').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("opera") === "true")
+	{
+		document.querySelector('.link-opera').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("botanic") === "true")
+	{
+		document.querySelector('.link-botanic').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("pet") === "true")
+	{
+		document.querySelector('.link-pet').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("hyde") === "true")
+	{
+		document.querySelector('.link-hyde').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("rocks") === "true")
+	{
+		document.querySelector('.link-rocks').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("manly") === "true")
+	{
+		document.querySelector('.link-manly').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("echoPoint") === "true")
+	{
+		document.querySelector('.link-echoPoint').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("elizabeth") === "true")
+	{
+		document.querySelector('.link-elizabeth').classList.add('correct-link'); //Green Checkmark
+	}
+	if (localStorage.getItem("cahill") === "true")
+	{
+		document.querySelector('.link-cahill').classList.add('correct-link'); //Green Checkmark
+	}
 </script>
 
 
