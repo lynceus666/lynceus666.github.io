@@ -268,6 +268,7 @@
 		localStorage.getItem("cahill") === "true")
 	{
 		localStorage.setItem("allSolved", "true");
+		openPopup();
 	}
 	
 	if(localStorage.getItem("allSolved") === "true")
@@ -590,8 +591,29 @@
 		}
 	}
 	
+	function openPopup() {
+		document.getElementById('popupOverlay').style.display = 'block';
+	}
+
+	function closePopup() {
+		document.getElementById('popupOverlay').style.display = 'none';
+	}
 </script>
 
+<div id="popupOverlay" class="popup-overlay">
+    <div class="popup-content">
+        <span class="popup-close-btn" onclick="closePopup()">&times;</span>
+        <p>You did it!<br>
+		   You really solved all the riddles and unlocked all letters!<br><br>
+		   Now to get to the final question you still need to decode the letters.<br>
+		   Our detective for recherche and archive developed a special tool and installed it on your phone.<br><br>
+		   All you need to do to decode the letters is click on each letter a few times.<br>
+		   The unlocking tool will then switch the letters and recognize once it is correct.<br>
+		   The letter will then change color and you will know it is decoded.<br>
+		  <span class="hash white">#</span><span class="hash red">#</span><span class="hash blue">#</span>
+			</p>
+    </div>
+</div>
 
 </body>
 </html>
