@@ -248,286 +248,307 @@
 		revealLetterForCondition("cahill", "letter20", "Q");
 	}
 	
+	//Check if all is solved
+	if (localStorage.getItem("ww1") === "true" &&
+		localStorage.getItem("ww2") === "true" &&
+		localStorage.getItem("ww3") === "true" &&
+		localStorage.getItem("ww4") === "true" &&
+		localStorage.getItem("ww5") === "true" &&
+		localStorage.getItem("observatory") === "true" &&
+		localStorage.getItem("opera") === "true" &&
+		localStorage.getItem("botanic") === "true" &&
+		localStorage.getItem("pet") === "true" &&
+		localStorage.getItem("hyde") === "true" &&
+		localStorage.getItem("rocks") === "true" &&
+		localStorage.getItem("manly") === "true" &&
+		localStorage.getItem("echoPoint") === "true" &&
+		localStorage.getItem("elizabeth") === "true" &&
+		localStorage.getItem("cahill") === "true")
+	{
+		localStorage.setItem("allSolved", "true");
+	}
 	
-	document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter01");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'W') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
-		});
-	});
-	
-	document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter02");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'I') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
-		});
-	});
-	
-	document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter03");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'L') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
-		});
-	});
-	
-	document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter04");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'L') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
-		});
-	});
-	
-	document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter05");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'S') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
-		});
-	});
-	
-	document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter06");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'T') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
-		});
-	});
-	
+	if(localStorage.getItem("allSolved") === "true")
+	{
 		document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter07");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'D') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
+			var letterElement = document.getElementById("letter01");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'W') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
 		});
-	});
-	
-	document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter08");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'U') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
-		});
-	});
-	
+		
 		document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter09");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'M') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
+			var letterElement = document.getElementById("letter02");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'I') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
 		});
-	});
-	
-	document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter10");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'I') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
-		});
-	});
+		
 		document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter11");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'C') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
+			var letterElement = document.getElementById("letter03");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'L') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
 		});
-	});
-	
-	document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter12");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'H') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
-		});
-	});
-	
+		
 		document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter13");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'H') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
+			var letterElement = document.getElementById("letter04");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'L') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
 		});
-	});
-	
-	document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter14");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'E') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
-		});
-	});
-	
+		
 		document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter15");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'I') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
+			var letterElement = document.getElementById("letter05");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'S') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
 		});
-	});
-	
-	document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter16");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'R') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
-		});
-	});
-	
+		
 		document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter17");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'A') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
+			var letterElement = document.getElementById("letter06");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'T') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
 		});
-	});
-	
-	document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter18");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'T') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
+		
+			document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter07");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'D') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
 		});
-	});
-	
+		
 		document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter19");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'E') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
+			var letterElement = document.getElementById("letter08");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'U') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
 		});
-	});
-	
-	document.addEventListener("DOMContentLoaded", function() {
-		var letterElement = document.getElementById("letter20");
-		letterElement.addEventListener("click", function() {
-			var currentLetter = letterElement.textContent;
-			var nextLetter = getNextLetter(currentLetter);
-			letterElement.textContent = nextLetter;
-			if (nextLetter === 'N') {
-				letterElement.classList.remove('revealed');
-				letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
-				letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
-			}
+		
+			document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter09");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'M') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
 		});
-	});
-	
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter10");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'I') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
+		});
+			document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter11");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'C') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter12");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'H') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
+		});
+		
+			document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter13");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'H') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter14");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'E') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
+		});
+		
+			document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter15");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'I') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter16");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'R') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
+		});
+		
+			document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter17");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'A') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter18");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'T') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
+		});
+		
+			document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter19");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'E') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter20");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'N') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+				}
+			});
+		});
+	}
 	
 	function getNextLetter(letter) {
 		if (letter === 'A') {  // Falls der aktuelle Buchstabe Z ist, zum Anfang (A) zurückkehren
