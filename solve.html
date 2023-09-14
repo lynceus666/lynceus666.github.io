@@ -170,14 +170,14 @@
 	if (localStorage.getItem("ww1") === "true")
 	{
 		document.querySelector('.link-ww1').classList.add('correct-link'); //Green Checkmark
-		//Reveal letter
-		
-		
+		revealLetterForCondition("ww1", "letter01", "Z");
 	}
 	if (localStorage.getItem("ww2") === "true")
 	{
 		document.querySelector('.link-ww2').classList.add('correct-link'); //Green Checkmark
-		revealLetterForCondition("ww1", "letter01", "W");
+		revealLetterForCondition("ww2", "letter02", "L");
+		revealLetterForCondition("ww2", "letter10", "L");
+		revealLetterForCondition("ww2", "letter15", "L");
 	}
 	if (localStorage.getItem("ww3") === "true")
 	{
