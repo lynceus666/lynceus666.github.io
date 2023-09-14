@@ -186,27 +186,27 @@ body.animate-dark {
     animation: fillBlack 5s forwards;
 }
 
-.toast {
-    position: fixed;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 16px;
-    z-index: 10000; 
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s;
+.hashes {
+    display: none; /* Am Anfang unsichtbar */
+    position: fixed; /* Wird über anderen Inhalten angezeigt */
+    top: 50%; /* Mittig vertikal positionieren */
+    left: 50%; /* Mittig horizontal positionieren */
+    transform: translate(-50%, -50%); /* Zentriert das Element genau in der Mitte des Bildschirms */
+    font-size: 40px; /* Größe der # Zeichen; anpassen, falls nötig */
+    z-index: 1000; /* Stellt sicher, dass es über anderen Elementen angezeigt wird */
 }
 
-.toast.show {
-    display: block;
-    opacity: 1;
+.hash.red {
+    color: red;
 }
 
+.hash.blue {
+    color: blue;
+}
+
+.hash.green {
+    color: green;
+}
 
 @media screen and (min-width: 769px) {
     .menu {

@@ -8,9 +8,7 @@
 	<link id="darkModeStylesheet" rel="stylesheet" type="text/css" href="dark.css" disabled>
 </head>
 <body>
-<div id="darkModeToast" class="toast">
-    Dark Mode aktiviert!
-</div>
+
 <div id="page-container">
 	<div class="main-content">
 		<button id="menu-toggle" class="hamburger-menu">
@@ -71,6 +69,13 @@
 				<div id="feedbackMessage" style="color: green; margin-top: 10px;"></div>
 			</form>
 		</div>
+		
+		<div class="hashes" id="hashNotification">
+			<span class="hash red">#</span>
+			<span class="hash blue">#</span>
+			<span class="hash green">#</span>
+		</div>
+		
 	</div>
 		
 
@@ -133,7 +138,12 @@
 						document.getElementById('darkModeStylesheet').removeAttribute('disabled');
 						document.getElementById('originalStylesheet').setAttribute('disabled', true);
 						document.body.classList.add('animate-dark');
-						showDarkModeToast();
+						//###
+						document.getElementById("hashNotification").style.display = "block"; // Zeigt die # Zeichen an
+						// Optional: Nach ein paar Sekunden ausblenden
+						setTimeout(function() {
+							document.getElementById("hashNotification").style.display = "none";
+						}, 3000); // 3000 Millisekunden = 3 Sekunden
 						}
             }
         } else {
