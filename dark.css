@@ -183,7 +183,7 @@ a[href^="https://www.google.com/maps"] {
 }
 
 body.animate-dark {
-    animation: fillBlack 2s forwards;
+    animation: fillBlack 5s forwards;
 }
 
 .toast {
