@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scavenger Hunt</title>
+	<link id="originalStylesheet" rel="stylesheet" type="text/css" href="styles.css">
+	<link id="darkModeStylesheet" rel="stylesheet" type="text/css" href="dark.css" disabled>
+</head>
+<body>
+
+<div id="page-container">
+	<div class="main-content">
+		<button id="menu-toggle" class="hamburger-menu">
+			&#9776; Menu
+		</button>
+		<div class="menu">
+			<div class="menu-item">
+				<a href="#" class="menu-link">Sydney</a>
+				<div class="submenu">
+					<a href="/wwInfo.html">Writers Walk Info</a>
+					<a href="/ww1.html" class="link-ww1">Writers Walk 1</a>
+					<a href="/ww2.html" class="link-ww2">Writers Walk 2</a>
+					<a href="/ww3.html" class="link-ww3">Writers Walk 3</a>
+					<a href="/ww4.html" class="link-ww4">Writers Walk 4</a>
+					<a href="/ww5.html" class="link-ww5">Writers Walk 5</a>
+					<a href="/observatory.html" class="locked-link link-observatory">Observatory Hill</a>
+					<a href="/opera.html" class="locked-link link-opera">Sydney Opera House</a>
+					<a href="/botanic.html" class="locked-link link-botanic">Royal Botanic Gardens</a>
+					<a href="/pet.html" class="locked-link link-pet">Flinder's Pet</a>
+					<a href="/hyde.html" class="locked-link link-hyde">Hyde Park</a>
+					<a href="/rocks.html" class="locked-link link-rocks">The Rocks</a>
+					<a href="/manly.html" class="locked-link link-manly">Manly Cove</a>
+				</div>
+			</div>
+
+			<div class="menu-item">
+				<a href="#" class="menu-link">Blue Mountains</a>
+				<div class="submenu">
+					<a href="/echoPoint.html" class="locked-link link-echoPoint">Echo Point</a>
+					<a href="/elizabeth.html" class="locked-link link-elizabeth">Queen Elizabeth Lookout</a>
+					<a href="/cahill.html" class="locked-link link-cahill">Cahill's Lookout</a>
+				</div>
+			</div>
+			
+			<div class="menu-item">
+				<a href="/solve.html" class="menu-link">Final Question</a>
+			</div>
+		</div>
+
+		<div class="content-wrap">
+		 <h1>Final Question</h1> <!-- XXX --> 
+			<!-- Bild für die Frage -->
+			<img src="pic/questionMark.jpg" alt="image" class="question-image" id="fullscreenImage"> <!-- XXX --> 
+			<br><br>
+				<!-- Frage -->  
+			<div class="letters-container">
+				<div class="letter-group">
+					<span data-letter="A" class="mystery-letter" id="letter01">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter02">?</span>
+					<span data-letter="A" class="mystery-letter" id="letter03">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter04">?</span>
+					<span data-letter="A" class="mystery-letter" id="letter05">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter06">?</span>
+				</div>
+				<div class="letter-group">
+					<span data-letter="A" class="mystery-letter" id="letter07">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter08">?</span>
+				</div>
+				<div class="letter-group">
+					<span data-letter="A" class="mystery-letter" id="letter09">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter10">?</span>
+					<span data-letter="A" class="mystery-letter" id="letter11">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter12">?</span>
+				</div>
+				<div class="letter-group">
+					<span data-letter="A" class="mystery-letter" id="letter13">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter14">?</span>
+					<span data-letter="A" class="mystery-letter" id="letter15">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter16">?</span>
+					<span data-letter="A" class="mystery-letter" id="letter17">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter18">?</span>
+					<span data-letter="A" class="mystery-letter" id="letter19">?</span>
+					<span data-letter="B" class="mystery-letter" id="letter20">?</span>
+					<span data-letter="A" class="mystery-letter" id="letter21">?</span>
+				</div>
+			</div>
+	
+			
+		</div>
+	</div>
+		
+
+	<!-- Der Footer -->
+	<div class="footer">
+		<a href="#">About us</a>
+		<a href="#">Destinations</a>
+		<a href="#">Travel Tips</a>
+		<a href="#">Contact us</a>
+		<a href="/credits.html">Image Credits</a>
+		<a href="#">Terms and Conditions</a>
+	</div>
+</div>
+<script>
+	document.body.classList.remove("transition-background");
+
+	document.addEventListener('DOMContentLoaded', function() {
+		// Aktuellen Pfad der Webseite erhalten
+		var currentPath = window.location.pathname;
+		console.log(currentPath);
+		// Alle Links in den Menüs abrufen
+		var menuLinks = document.querySelectorAll('.menu a');
+
+		menuLinks.forEach(function(link) {
+			if (link.getAttribute('href') === currentPath) {
+				// Den aktiven Link markieren
+				link.classList.add('active-link');
+
+				// Übergeordnetes Menüelement (falls vorhanden) finden und erweitern
+				var parentMenu = link.closest('.submenu');
+				if (parentMenu) {
+					parentMenu.style.display = 'block';
+				}
+			}
+		});
+	});
+	
+
+	//Hamburger Menu
+	document.addEventListener('DOMContentLoaded', function() 
+	{
+		var menuToggle = document.getElementById('menu-toggle');
+		var menu = document.querySelector('.menu');
+		
+		if (menuToggle) 
+		{
+			menuToggle.addEventListener('click', function() 
+			{
+				if (menu.style.display === 'none' || menu.style.display === '') {
+					menu.style.display = 'block';
+				} else {
+					menu.style.display = 'none';
+				}
+			});
+		}
+	});
+	
+	
+	//Dark Mode check
+	document.addEventListener('DOMContentLoaded', function() {
+		if (localStorage.getItem("dark") === "true") {
+			// Aktiviere die darkmode.css Datei.
+			document.getElementById('darkModeStylesheet').removeAttribute('disabled');
+			
+			// Optional: Deaktiviere die ursprüngliche CSS-Datei, falls notwendig.
+			 document.getElementById('originalStylesheet').setAttribute('disabled', true);
+		}
+	});
+	
+	function revealLetterForCondition(conditionKey, letterId, revealedLetter) {
+    if (localStorage.getItem(conditionKey) === "true") {
+        var letter = document.getElementById(letterId);
+        letter.textContent = revealedLetter;
+        letter.classList.add('revealed');
+    }
+}
+	
+	//Color answered Links
+	if (localStorage.getItem("ww1") === "true")
+	{
+		document.querySelector('.link-ww1').classList.add('correct-link'); //Green Checkmark
+		revealLetterForCondition("ww1", "letter01", "Z");
+	}
+	if (localStorage.getItem("ww2") === "true")
+	{
+		document.querySelector('.link-ww2').classList.add('correct-link'); //Green Checkmark
+		revealLetterForCondition("ww2", "letter02", "L");
+		revealLetterForCondition("ww2", "letter10", "L");
+		revealLetterForCondition("ww2", "letter15", "L");
+	}
+	if (localStorage.getItem("ww3") === "true")
+	{
+		document.querySelector('.link-ww3').classList.add('correct-link'); //Green Checkmark
+		revealLetterForCondition("ww3", "letter03", "O");
+		revealLetterForCondition("ww3", "letter04", "O");
+	}
+	if (localStorage.getItem("ww4") === "true")
+	{
+		document.querySelector('.link-ww4').classList.add('correct-link'); //Green Checkmark
+		revealLetterForCondition("ww4", "letter05", "V");
+	}
+	if (localStorage.getItem("ww5") === "true")
+	{
+		document.querySelector('.link-ww5').classList.add('correct-link'); //Green Checkmark
+		revealLetterForCondition("ww5", "letter06", "W");
+		revealLetterForCondition("ww5", "letter18", "W");
+	}
+	if (localStorage.getItem("observatory") === "true")
+	{
+		document.querySelector('.link-observatory').classList.add('correct-link'); //Green Checkmark
+		revealLetterForCondition("observatory", "letter07", "G");
+	}
+	if (localStorage.getItem("opera") === "true")
+	{
+		document.querySelector('.link-opera').classList.add('correct-link'); //Green Checkmark
+		revealLetterForCondition("opera", "letter08", "X");
+	}
+	if (localStorage.getItem("botanic") === "true")
+	{
+		document.querySelector('.link-botanic').classList.add('correct-link'); //Green Checkmark
+		revealLetterForCondition("botanic", "letter09", "P");
+	}
+	if (localStorage.getItem("pet") === "true")
+	{
+		document.querySelector('.link-pet').classList.add('correct-link'); //Green Checkmark
+		revealLetterForCondition("pet", "letter11", "F");
+	}
+	if (localStorage.getItem("hyde") === "true")
+	{
+		document.querySelector('.link-hyde').classList.add('correct-link'); //Green Checkmark
+		revealLetterForCondition("hyde", "letter12", "K");
+		revealLetterForCondition("hyde", "letter13", "K");
+	}
+	if (localStorage.getItem("rocks") === "true")
+	{
+		document.querySelector('.link-rocks').classList.add('correct-link'); //Green Checkmark
+		revealLetterForCondition("rocks", "letter14", "H");
+	}
+	if (localStorage.getItem("manly") === "true")
+	{
+		document.querySelector('.link-manly').classList.add('correct-link'); //Green Checkmark
+		revealLetterForCondition("manly", "letter16", "U");
+	}
+	if (localStorage.getItem("echoPoint") === "true")
+	{
+		document.querySelector('.link-echoPoint').classList.add('correct-link'); //Green Checkmark
+		revealLetterForCondition("echoPoint", "letter17", "D");
+	}
+	if (localStorage.getItem("elizabeth") === "true")
+	{
+		document.querySelector('.link-elizabeth').classList.add('correct-link'); //Green Checkmark
+		revealLetterForCondition("elizabeth", "letter19", "H");
+	}
+	if (localStorage.getItem("cahill") === "true")
+	{
+		document.querySelector('.link-cahill').classList.add('correct-link'); //Green Checkmark
+		revealLetterForCondition("cahill", "letter20", "Q");
+	}
+	
+	//Check if all is solved
+	if (localStorage.getItem("ww1") === "true" &&
+		localStorage.getItem("ww2") === "true" &&
+		localStorage.getItem("ww3") === "true" &&
+		localStorage.getItem("ww4") === "true" &&
+		localStorage.getItem("ww5") === "true" &&
+		localStorage.getItem("observatory") === "true" &&
+		localStorage.getItem("opera") === "true" &&
+		localStorage.getItem("botanic") === "true" &&
+		localStorage.getItem("pet") === "true" &&
+		localStorage.getItem("hyde") === "true" &&
+		localStorage.getItem("rocks") === "true" &&
+		localStorage.getItem("manly") === "true" &&
+		localStorage.getItem("echoPoint") === "true" &&
+		localStorage.getItem("elizabeth") === "true" &&
+		localStorage.getItem("cahill") === "true")
+	{
+		localStorage.setItem("allSolved", "true");
+	}
+	
+	if(localStorage.getItem("allSolved") === "true")
+	{
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter01");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'W') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+					openPopup();
+				}
+			});
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter02");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'I') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter03");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'L') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter04");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'L') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter05");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'S') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter06");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'T') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+		
+			document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter07");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'D') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter08");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'U') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+		
+			document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter09");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'M') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter10");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'I') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+			document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter11");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'C') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter12");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'H') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+		
+			document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter13");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'H') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter14");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'E') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+		
+			document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter15");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'I') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter16");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'R') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+		
+			document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter17");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'A') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter18");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'T') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+		
+			document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter19");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'E') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			var letterElement = document.getElementById("letter20");
+			letterElement.addEventListener("click", function() {
+				var currentLetter = letterElement.textContent;
+				var nextLetter = getNextLetter(currentLetter);
+				letterElement.textContent = nextLetter;
+				if (nextLetter === 'N') {
+					letterElement.classList.remove('revealed');
+					letterElement.classList.add('mystery-letter-solved'); // Fügt die Klasse hinzu, die die Farbe ändert
+					letterElement.removeEventListener('click', arguments.callee); // Entfernt den Klick-Event-Listener
+					countSolvedLetters();
+				}
+			});
+		});
+	}
+	
+	function getNextLetter(letter) {
+		if (letter === 'A') {  // Falls der aktuelle Buchstabe Z ist, zum Anfang (A) zurückkehren
+			return 'Z';
+		}
+		// String.fromCharCode() gibt den Zeichen-String aus seinem UTF-16-Code zurück.
+		// charCodeAt() gibt den UTF-16-Code des Zeichens am angegebenen Index zurück.
+		return String.fromCharCode(letter.charCodeAt(0) - 1);
+	}
+	
+	function countSolvedLetters() {
+		var solvedLetters = document.querySelectorAll('.mystery-letter-solved');
+		if(solvedLetters.length === 20)
+		{
+			var imageElement = document.getElementById('fullscreenImage');
+			imageElement.src = '/pic/IMG_20220927_122911.jpg';
+		}
+	}
+	
+	function openPopup() {
+		document.getElementById('popupOverlay').style.display = 'block';
+	}
+
+	function closePopup() {
+		document.getElementById('popupOverlay').style.display = 'none';
+	}
+	
+</script>
+
+<div id="popupOverlay" class="popup-overlay">
+    <div class="popup-content">
+        <span class="popup-close-btn" onclick="closePopup()">&times;</span>
+        <p>Hier kommt Ihre wichtige Nachricht hin!</p>
+    </div>
+</div>
+
+</body>
+</html>
