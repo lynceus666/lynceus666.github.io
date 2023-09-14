@@ -192,20 +192,20 @@ body.animate-dark {
     top: 50%; /* Mittig vertikal positionieren */
     left: 50%; /* Mittig horizontal positionieren */
     transform: translate(-50%, -50%); /* Zentriert das Element genau in der Mitte des Bildschirms */
-    font-size: 40px; /* Größe der # Zeichen; anpassen, falls nötig */
+    font-size: 70px; /* Größe der # Zeichen; anpassen, falls nötig */
     z-index: 1000; /* Stellt sicher, dass es über anderen Elementen angezeigt wird */
 }
 
+.hash.white {
+    color: #ffffff;
+}
+
 .hash.red {
-    color: red;
+    color: #e30016;
 }
 
 .hash.blue {
-    color: blue;
-}
-
-.hash.green {
-    color: green;
+    color: #009fe3;
 }
 
 @media screen and (min-width: 769px) {
