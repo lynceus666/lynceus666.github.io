@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv='cache-control' content='no-cache'> 
-	<meta http-equiv='expires' content='0'> 
-	<meta http-equiv='pragma' content='no-cache'>
 	
     <title>Scavenger Hunt</title>
 	<link id="originalStylesheet" rel="stylesheet" type="text/css" href="styles.css">
@@ -23,31 +20,33 @@
 				<a href="#" class="menu-link">Sydney</a>
 				<div class="submenu">
 					<a href="/wwInfo.html">Writers Walk Info</a>
-					<a href="/ww1.html">Writers Walk 1</a>
-					<a href="/ww2.html">Writers Walk 2</a>
-					<a href="/ww3.html">Writers Walk 3</a>
-					<a href="/ww4.html">Writers Walk 4</a>
-					<a href="/ww5.html">Writers Walk 5</a>
-					<a href="/observatory.html">Observatory Hill</a>
-					<a href="/opera.html">Sydney Opera House</a>
-					<a href="/botanic.html">Royal Botanic Gardens</a>
-					<a href="/pet.html">Flinder's Pet</a>
-					<a href="/hyde.html">Hyde Park</a>
-					<a href="/rocks.html">The Rocks</a>
-					<a href="/manly.html">Manly Cove</a>
+					<a href="/ww1.html" class="link-ww1">Writers Walk 1</a>
+					<a href="/ww2.html" class="link-ww2">Writers Walk 2</a>
+					<a href="/ww3.html" class="link-ww3">Writers Walk 3</a>
+					<a href="/ww4.html" class="link-ww4">Writers Walk 4</a>
+					<a href="/ww5.html" class="link-ww5">Writers Walk 5</a>
+					<a href="/observatory.html" class="locked-link" class="link-observatory">Observatory Hill</a>
+					<a href="/opera.html" class="locked-link" class="link-opera">Sydney Opera House</a>
+					<a href="/botanic.html" class="locked-link" class="link-botanic">Royal Botanic Gardens</a>
+					<a href="/pet.html" class="locked-link" class="link-pet">Flinder's Pet</a>
+					<a href="/hyde.html" class="locked-link" class="link-hyde">Hyde Park</a>
+					<a href="/rocks.html" class="locked-link" class="link-rocks">The Rocks</a>
+					<a href="/manly.html" class="locked-link" class="link-manly">Manly Cove</a>
 				</div>
 			</div>
 
 			<div class="menu-item">
 				<a href="#" class="menu-link">Blue Mountains</a>
 				<div class="submenu">
-					<a href="/echoPoint.html">Echo Point</a>
-					<a href="/elizabeth.html">Queen Elizabeth Lookout</a>
-					<a href="/cahill.html">Cahill's Lookout</a>
+					<a href="/echoPoint.html" class="locked-link" class="link-echoPoint">Echo Point</a>
+					<a href="/elizabeth.html" class="locked-link" class="link-elizabeth">Queen Elizabeth Lookout</a>
+					<a href="/cahill.html" class="locked-link" class="link-cahill">Cahill's Lookout</a>
 				</div>
 			</div>
-
-			<!-- Weitere Menüpunkte -->
+			
+			<div class="menu-item">
+				<a href="/solve.html" class="menu-link">Final Question</a>
+			</div>
 		</div>
 
 		<div class="content-wrap">
@@ -134,6 +133,7 @@
 			feedbackMessage.innerHTML = correctMessage;
 			if (localStorage.getItem("ww2") !== "true") {
 				localStorage.setItem("ww2", "true");
+				document.querySelector('.link-ww2').classList.add('correct-link'); //Green Checkmark
 				//Check if conditions for dark mode are met
 				if (localStorage.getItem("ww1") === "true" &&
 				    localStorage.getItem("ww2") === "true" &&
@@ -150,9 +150,6 @@
 						document.body.style.transition = "background-color 6s";
 						
 						document.getElementById("hashNotification").style.display = "block"; // Zeigt die # Zeichen an
-						
-						
-						
 						
 						// Optional: Nach ein paar Sekunden ausblenden
 						setTimeout(function() {
