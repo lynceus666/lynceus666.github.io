@@ -68,6 +68,30 @@ html {
 	min-height: 100vh;
 }
 
+/* Startzustand für den Hintergrund */
+#page-container {
+    position: relative; /* Damit das Pseudo-Element relativ zum Container positioniert wird */
+    overflow: hidden;   /* Verhindert, dass das Pseudo-Element außerhalb des Containers angezeigt wird */
+}
+
+/* Das Pseudo-Element für die "dunkle Welle" */
+#page-container::before {
+    content: "";
+    position: absolute;
+    top: -100%; /* Start oben außerhalb des sichtbaren Bereichs */
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    background-color: black; /* Die Farbe der "dunklen Welle" */
+    z-index: 10; /* Liegt über dem Inhalt (dies kann angepasst werden) */
+    transition: top 2s; /* 2s ist die Animationsdauer, die angepasst werden kann */
+}
+
+/* Zustand, wenn dark-mode aktiviert ist */
+#page-container.dark-mode::before {
+    top: 0;
+}
+
 .main-content {
     display: flex;
     flex-direction: row;
@@ -133,12 +157,6 @@ h2 {
 	color: #ffd700;
 }
 
-:fullscreen #fullscreenImage {
-    max-width: 100vw;  /* maximal 100% der Bildschirmbreite */
-    max-height: 100vh; /* maximal 100% der Bildschirmhöhe */
-    margin: auto;      /* zentriert das Bild */
-    display: block;
-}
 
 a[href^="https://www.google.com/maps"] {
     color: #4285f4;             /* Google Blau */
