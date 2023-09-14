@@ -213,7 +213,7 @@ a[href^="https://www.google.com/maps"] {
 }
 
 .correct-link {
-    color: inherit; /* Falls Sie die Linkfarbe beibehalten möchten */
+    color: green !important;
     position: relative;
 }
 
@@ -221,10 +221,10 @@ a[href^="https://www.google.com/maps"] {
     content: "\2713"; /* Unicode für das Häkchen-Symbol */
     color: green;     /* Grüne Farbe für das Häkchen */
     position: absolute;
-    left: -10px;      /* Positionierung vor dem Link; passen Sie dies je nach Bedarf an */
+    left: -15px;      /* Positionierung vor dem Link; passen Sie dies je nach Bedarf an */
     top: 50%;
     transform: translateY(-50%);
-    font-size: 16px;  /* Größe des Symbols */
+    font-size: 35px;  /* Größe des Symbols */
 }
 
 @media screen and (min-width: 769px) {
