@@ -192,9 +192,9 @@ body.animate-dark {
     top: 50%; /* Mittig vertikal positionieren */
     left: 50%; /* Mittig horizontal positionieren */
     transform: translate(-50%, -50%); /* Zentriert das Element genau in der Mitte des Bildschirms */
-    font-size: 70px; /* Größe der # Zeichen; anpassen, falls nötig */
+    font-size: 80px; /* Größe der # Zeichen; anpassen, falls nötig */
     z-index: 1000; /* Stellt sicher, dass es über anderen Elementen angezeigt wird */
-	text-shadow: -2px 0 #000,  
+	text-shadow: -5px 0 #000,  
                  2px 0 #000,
                  0 2px #000,
                  0 -2px #000; 
