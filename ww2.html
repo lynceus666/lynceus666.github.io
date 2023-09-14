@@ -140,26 +140,18 @@
 						document.body.classList.add('animate-dark');
 						//###
 						document.getElementById("hashNotification").style.display = "block"; // Zeigt die # Zeichen an
+						
+						/*
 						// Optional: Nach ein paar Sekunden ausblenden
 						setTimeout(function() {
 							document.getElementById("hashNotification").style.display = "none";
-						}, 3000); // 3000 Millisekunden = 3 Sekunden
+						}, 3000); // 3000 Millisekunden = 3 Sekunden */
 						}
             }
         } else {
             feedbackMessage.innerHTML = "Wrong answer!<br>Try again";
         }
     }
-	
-	//Toast
-	function showDarkModeToast() {
-		var toast = document.getElementById('darkModeToast');
-		toast.classList.add('show');
-		setTimeout(function(){
-			toast.classList.remove('show');
-		}, 3000); // Die Nachricht wird nach 3 Sekunden ausgeblendet
-	}
-	
 	
 	// Check if question answered already
 	document.addEventListener('DOMContentLoaded', function() {
