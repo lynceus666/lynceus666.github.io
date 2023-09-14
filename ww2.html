@@ -90,6 +90,8 @@
 	</div>
 </div>
 <script>
+	document.body.style.transition = ""; 
+
 	document.addEventListener('DOMContentLoaded', function() {
 		// Aktuellen Pfad der Webseite erhalten
 		var currentPath = window.location.pathname;
@@ -118,7 +120,7 @@
 	});
 	
 	var correctMessage = "Correct! Well done! <br>The <strong>2</strong>nd, <strong>10</strong>th and <strong>15</strong>th letter is <span class='highlight-letter'>L</span>";
-
+	
 	//Check answer
     function checkAnswer() {
         var userAnswer = document.getElementById("answer").value.toLowerCase();
@@ -139,13 +141,21 @@
 						document.getElementById('originalStylesheet').setAttribute('disabled', true);
 						document.body.classList.add('animate-dark');
 						//###
+						
+						//Transition to Black
+						document.body.style.transition = "background-color 6s";
+						
 						document.getElementById("hashNotification").style.display = "block"; // Zeigt die # Zeichen an
 						
-						/*
+						
+						
+						
 						// Optional: Nach ein paar Sekunden ausblenden
 						setTimeout(function() {
 							document.getElementById("hashNotification").style.display = "none";
-						}, 3000); // 3000 Millisekunden = 3 Sekunden */
+						}, 3000); // 3000 Millisekunden = 3 Sekunden
+						
+						
 						}
             }
         } else {
