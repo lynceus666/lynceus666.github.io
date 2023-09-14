@@ -194,6 +194,10 @@ body.animate-dark {
     transform: translate(-50%, -50%); /* Zentriert das Element genau in der Mitte des Bildschirms */
     font-size: 70px; /* Größe der # Zeichen; anpassen, falls nötig */
     z-index: 1000; /* Stellt sicher, dass es über anderen Elementen angezeigt wird */
+	text-shadow: -1px -1px 0 #000,  
+                 1px -1px 0 #000,
+                 -1px 1px 0 #000,
+                 1px 1px 0 #000; 
 }
 
 .hash.white {
