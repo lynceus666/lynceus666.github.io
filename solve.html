@@ -248,6 +248,26 @@
 		revealLetterForCondition("cahill", "letter20", "Q");
 	}
 	
+	
+	document.addEventListener("DOMContentLoaded", function() {
+		var letterElement = document.getElementById("letter01");
+    
+		letterElement.addEventListener("click", function() {
+			var currentLetter = letterElement.textContent;
+			var nextLetter = getNextLetter(currentLetter);
+			letterElement.textContent = nextLetter;
+		});
+	});
+	
+	function getNextLetter(letter) {
+		if (letter === 'A') {  // Falls der aktuelle Buchstabe Z ist, zum Anfang (A) zurückkehren
+			return 'Z';
+		}
+		// String.fromCharCode() gibt den Zeichen-String aus seinem UTF-16-Code zurück.
+		// charCodeAt() gibt den UTF-16-Code des Zeichens am angegebenen Index zurück.
+		return String.fromCharCode(letter.charCodeAt(0) - 1);
+	}
+	
 </script>
 
 
